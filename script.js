@@ -1,11 +1,24 @@
 var idcards = 0; 
-AddCategoria("Titulo", "x");
+AddCategoria("12", "Pegar o carregador");
+AddCategoria("12", "Pegar o carregador");
+AddCategoria("12", "Pegar o carregador");
+AddCategoria("12", "Pegar o carregador");
+AddCategoria("12", "Pegar o carregador");
+AddCategoria("12", "Pegar o carregador");
+AddCategoria("12", "Pegar o carregador");
+AddCategoria("12", "Pegar o carregador");
+AddCategoria("12", "Pegar o carregador");
 
 /* Função chamada quando vamos adicionar nova categoria */
-function AddCategoria(titulo, paragraf){
+function AddCategoria(dias, descrição){
+    console.log(descrição)
 
-    if((paragraf == "") == false){
-        valor = `${paragraf} dias`
+    if((dias == "") == true){
+        console.log("não crie listas vazias filho da puta");
+
+    } else{
+        dias = `${dias} dias`
+        console.log(dias)
     }
 
     /* Base do cards */
@@ -13,14 +26,16 @@ function AddCategoria(titulo, paragraf){
     newcard.classList.add("cards");
     newcard.innerHTML = `
         <div>
-            <h2>${titulo}</h2>
+            <h2>${dias}</h2>
             <div class="div-botoes">
                 <button class="button-icon" id="button-alteraTask"> <i class="far fa-edit"></i> </button>
 
                 <button class="button-icon" id="button-DeletaTask"> <i class="far fa-times-circle"></i> </button>
             </div>
         </div>
-        <p>${paragraf}</p>
+        <div>
+            <p>${descrição}</p>
+        </div>
     `
 
         /* 
@@ -90,7 +105,8 @@ function cadastrarTarefa(event){
     event.preventDefault();
     
     /* Joga na função vista acima de criar os Cards os valores dos inputs */
-    AddCategoria(event.target[0].value, event.target[1].value, event.target[2].value);
+    /* event.target[].value representa os valores dos inputs no momento do evento. Ele referencia a ordem que os inputs aparecem no conteiner do evento, no caso o forms. Atualmente, o de dias é o primeiro, e o segundo é o de descrição. */
+    AddCategoria(event.target[0].value, event.target[1].value);
 
     /* Reseta os valores dos inputs p/ o user não ter que apagar */
     event.target[0].value = "";

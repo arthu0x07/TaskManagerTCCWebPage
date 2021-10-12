@@ -29,10 +29,13 @@
 
             <div class="conteiner-addTarefa">
                 <form action="#" id="formscadastro">
-                    <input type="text" placeholder="dias (opcional)">
-                    <input type="text" placeholder="descrição">
-                    <input type="submit" value="adicionar" id="button">
+                    <input type="text" placeholder="dias" id="formsinputdias">
+                    <input type="text" placeholder="descrição" id="formsinputdesc">
+                    <button id="button"><i class="fas fa-plus-square"></i></button>
+                    <!-- <input type="submit" value="adicionar" id="button"> -->
                 </form>
+
+                <div id="container-form-erro"> <p id="form-mensagem-erro"> não crie listas vazias amigo </p> </div>
             </div>
 
             <div class="container-cards" data-testando="45">

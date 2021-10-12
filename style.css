@@ -81,56 +81,104 @@ body {
 
 .conteiner-addTarefa {
   margin: 20px;
-  background-color: #0f0e0e;
-  border-radius: 5px;
+  background-color: #1b1b1b;
+  border-radius: 10px;
   flex-basis: 100%;
   display: flex;
   align-items: stretch;
+  flex-direction: column;
 }
 
-.conteiner-addTarefa form {
+#formscadastro {
   flex-grow: 1;
   display: flex;
   flex-wrap: wrap;
+  padding: 10px;
 }
 
-.conteiner-addTarefa form input:first-child {
-  flex-grow: 1;
-}
-
-.conteiner-addTarefa form input::placeholder {
-  color: #ffffffd5;
+#formscadastro input {
   font-weight: 500;
-}
-
-.conteiner-addTarefa form input {
-  text-align: center;
-  margin: 10px;
-  padding: 5px;
-
-  color: #ffffff;
-  font-weight: 500;
-
   font-size: 15px;
-  background-color: #181717;
-  border-radius: 6px;
-  flex-grow: 1;
+  background-color: #292929;
+  border-radius: 2px;
   border: 0px solid;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.425);
+
+  padding: 15px;
 }
 
-.conteiner-addTarefa form input:last-child {
+#formcadastro input:focus{
+  border:0px transparent none ;
+}
+
+#formsinputdias {
+  order: 2;
+  flex-shrink: 1;
+  flex-grow: 1;
+  margin-right: 2px;
+  margin: 2px;
+}
+
+#formsinputdias::placeholder {
+  color: #ffffff5e;
+  font-weight: 600;
+}
+
+#formsinputdesc {
+  order: 1;
+  flex-shrink: 0;
+  flex-grow: 4;
+  margin: 2px;
+}
+
+#formsinputdesc::placeholder {
+  color: #ffffff5e;
+  font-weight: 600;
 }
 
 #button {
-  color: #ffffff;
-  font-weight: 500;
+  order: 4;
+  flex-grow: 1;
+  margin: 2px;
+  color: #ffffff8c;
+  font-weight: 600;
+
+  padding: 5px 10px;
+  order: 3;
+  font-size: 35px;
+  background-color: #292929;
+  border-style: none;
   box-shadow: 0 3px 3px 0 rgb(27, 27, 27);
+
 }
 
+
 #button:hover {
-  background-color: #451653;
-  box-shadow: 0 3px 3px 0 #451653;
+  background-color: rgba(19, 18, 19, 0.274)
+
+}
+
+#button:focus{
+}
+
+#container-form-erro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+
+}
+
+#form-mensagem-erro{
+  padding: 10px;
+  color: rgba(255, 41, 4, 0.507);
+  background-color: rgba(145, 59, 44, 0.295);
+  font-weight: 900;
+  font-size: 15px;
+  border-radius: 7px;
+  border: 1px rgba(184, 65, 44, 0.164) solid;
+
 }
 
 .container-cards {
@@ -156,7 +204,6 @@ body {
   flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
-
 }
 
 .cards div {
@@ -173,12 +220,16 @@ body {
 .cards h2 {
   border-radius: 5px;
   padding: 10px;
-  background-color: #451653;
+  background-color: #19191ad2;
   font-size: 1rem;
 }
 
 .cards p {
-    font-size: 3rem;
+  margin-top: 7px;
+  padding: 5px;
+  background-color: #19191ad2;
+  font-size: 2rem;
+  border-radius: 7px;
 }
 
 .button-icon {
