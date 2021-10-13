@@ -40,7 +40,7 @@ function AddCategoria(dias, descrição) {
   newcard.classList.add("cards");
   newcard.innerHTML = `
         <div>
-            <div>
+            <div class="testing-padding">
                 <h2>${dias}</h2>
             </div>
 
