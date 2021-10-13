@@ -11,35 +11,29 @@ function AddCategoria(dias, descrição) {
 
 
   if ((descrição == "") == true) {
-    let erromsgdescnull = document.getElementById(
-      "container-form-erroDescNull"
-    );
-
+    let erromsgdescnull = document.getElementById("container-form-erroDescNull");
     erromsgdescnull.style.display = "flex";
 
-    setTimeout(function () {
-      erromsgdescnull.style.display = "none";
-    }, 5000);
+    setTimeout(function () { erromsgdescnull.style.display = "none"}, 5000);
 
     return null;
+
   } else 
   
-  if (dias == "") {
-    let erromsgdaysnull = document.getElementById(
-      "container-form-erroDaysNull"
-    );
 
+  if (dias == "") {
+    let erromsgdaysnull = document.getElementById("container-form-erroDaysNull");
     erromsgdaysnull.style.display = "flex";
 
-    setTimeout(function () {
-      erromsgdaysnull.style.display = "none";
-    }, 5000);
+    setTimeout(function () {erromsgdaysnull.style.display = "none"}, 5000);
 
   } else 
   
+
   if (dias != "") {
     dias = `${dias} dias`;
   }
+
 
   /* Base do cards */
   var newcard = document.createElement("div");
@@ -64,28 +58,14 @@ function AddCategoria(dias, descrição) {
   /* Teve que dar esse role todo mesmo, não pensei em nada melhor. Se alterar alguma coisa dentro da estrutura da div mais pra frente, de um log nesse newcard que consiste na div do card e veja o path para chegar no botão de novo e adicionar os eventos e os datasets */
 
   /* Adiciona o evento de clique nos dois botões */
-  newcard.children[0].children[1].children[0].addEventListener(
-    "click",
-    modificaTarefa
-  );
-  newcard.children[0].children[1].children[1].addEventListener(
-    "click",
-    modificaTarefa
-  );
-
-
+  newcard.children[0].children[1].children[0].addEventListener("click", modificaTarefa);
+  newcard.children[0].children[1].children[1].addEventListener("click", modificaTarefa);
 
   /* Adiciona um atributo data para identificarmos os cards com os botões para modificar depois */
 
   /* Atribuindo os data-attributes nos botoes */
-  newcard.children[0].children[1].children[0].setAttribute(
-    "data-idcard",
-    idcards
-  );
-  newcard.children[0].children[1].children[1].setAttribute(
-    "data-idcard",
-    idcards
-  );
+  newcard.children[0].children[1].children[0].setAttribute("data-idcard", idcards);
+  newcard.children[0].children[1].children[1].setAttribute("data-idcard", idcards);
 
 
 
@@ -109,16 +89,18 @@ function AddCategoria(dias, descrição) {
 function modificaTarefa(event) {
   /* valor do dataset para fazer a condicional */
   let valorid = event.path[1].getAttribute("id");
-
   /* valor do dataset do botão do evento atual */
   idcardBotao = event.path[1].dataset.idcard;
-
   /* valor do dataset da div */ /* usamos o dataset do botão para localizar o card, por isso que adicionamos o data set no momento da criação da tarefa */
   idcardDiv = document.querySelector(`[data-idcard="${idcardBotao}"]`);
 
   if (valorid == "button-alteraTask") {
     console.log("Alterou");
-  } else if (valorid == "button-DeletaTask") {
+
+  } else 
+  
+  
+  if (valorid == "button-DeletaTask") {
     idcardDiv.remove();
   }
 }
