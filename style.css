@@ -251,11 +251,16 @@ body {
 
 .button-icon {
   border-radius: 5px;
+  background-color: #1a1a1a9c;
+
 }
 
 .button-icon i {
   box-sizing: border-box;
   padding: 7px;
+  background-color: #1a1a1a9c;
+  margin: 10px;
+  border-radius: 5px;
 }
 
 .button-icon:hover {
