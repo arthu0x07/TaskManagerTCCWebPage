@@ -149,7 +149,6 @@ body {
   background-color: #292929;
   border-style: none;
   box-shadow: 0 3px 3px 0 rgb(27, 27, 27);
-
 }
 
 
@@ -161,16 +160,15 @@ body {
 #button:focus{
 }
 
-#container-form-erro{
-  display: flex;
+#container-form-erroDescNull{
+  display: none;
   align-items: center;
   justify-content: center;
   text-align: center;
   margin: 10px;
-
 }
 
-#form-mensagem-erro{
+#form-mensagem-erroDescNull{
   padding: 10px;
   color: rgba(255, 41, 4, 0.507);
   background-color: rgba(145, 59, 44, 0.295);
@@ -178,6 +176,25 @@ body {
   font-size: 15px;
   border-radius: 7px;
   border: 1px rgba(184, 65, 44, 0.164) solid;
+
+}
+
+#container-form-erroDaysNull{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 10px;
+}
+
+#form-mensagem-erroDaysNull{
+  padding: 10px;
+  color: rgba(226, 128, 0, 0.904);
+  background-color: rgba(226, 128, 0, 0.267);
+  font-weight: 900;
+  font-size: 15px;
+  border-radius: 7px;
+  border: 1px rgba(255, 115, 0, 0.164) solid;
 
 }
 
@@ -211,7 +228,7 @@ body {
   justify-content: space-between;
 }
 
-.cards div button {
+.div-botoes button{
   background-color: transparent;
   border-style: none;
   font-size: 20px;
