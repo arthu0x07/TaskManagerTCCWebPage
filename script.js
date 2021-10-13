@@ -50,6 +50,7 @@ function AddCategoria(dias, descrição) {
                 <button class="button-icon" id="button-DeletaTask"> <i class="far fa-times-circle"></i> </button>
             </div>
         </div>
+
         <div>
             <p>${descrição}</p>
         </div>
@@ -80,6 +81,17 @@ function AddCategoria(dias, descrição) {
   /* Adiciona o card criado dentro do container */
   let containerCards = document.querySelector(".container-cards");
   containerCards.append(newcard);
+
+
+  /* Area para testes do clique no card*/
+  /* Caso clique nos dias ou no conteiner da descrição ativa um evento.*/
+
+  newcard.children[0].children[0].children[0].addEventListener("click", ApresentaCard);
+  newcard.children[1].addEventListener("click", ApresentaCard);
+
+  function ApresentaCard(){
+    console.log("Abrir Tarefa")
+  }
 }
 
 
