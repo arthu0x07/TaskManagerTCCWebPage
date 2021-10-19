@@ -17,7 +17,6 @@ body {
   background-color: #0f0e0e;
   display: flex;
   justify-content: center;
-
 }
 
 .conteiner-card-expandido{
@@ -51,7 +50,7 @@ body {
   justify-content: flex-start;
   align-items: baseline;
   flex-wrap: wrap;
-  font-size: 1.8rem;
+  font-size: 2rem;
 
   width: 70%;
   min-width: 220px;
@@ -61,12 +60,12 @@ body {
 .section1-header-card h2{
   background-color: #1b1b1b;
   border-radius: 5px;
-  font-size: 2.0rem;
   font-style: italic;
   padding: 20px;
 }
 
 .section2-header-card{
+  font-size: 2rem;
 }
 
 .section3-main-card{
@@ -91,7 +90,7 @@ body {
 }
 
 .descricao-tarefa-expandida::placeholder{
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-style: italic;
   font-weight: 900;
 }
@@ -147,18 +146,22 @@ body {
   font-weight: 900;
   position: relative;
   top: -18px;
+  font-size: 3rem;
 }
 
 .txts p {
   font-weight: 200;
   position: relative;
   top: -20px;
+  font-size: 2.5rem;
 }
 
 .botãoEdit {
   min-height: 15vh;
   min-width: 300px;
   flex-grow: 1;
+
+  font-size: 2rem;
 
   display: flex;
   align-items: center;
@@ -191,7 +194,7 @@ body {
 
 #formscadastro input {
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   background-color: #292929;
   border-radius: 2px;
   border: 0px solid;
@@ -240,7 +243,7 @@ body {
 
   padding: 5px 10px;
   order: 3;
-  font-size: 3.5rem;
+  font-size: 3rem;
   background-color: #292929;
   border-style: none;
   box-shadow: 0 3px 3px 0 rgb(27, 27, 27);
@@ -268,7 +271,7 @@ body {
   color: rgba(255, 41, 4, 0.507);
   background-color: rgba(145, 59, 44, 0.295);
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   border-radius: 7px;
   border: 1px rgba(184, 65, 44, 0.164) solid;
 
@@ -287,7 +290,7 @@ body {
   color: rgba(226, 128, 0, 0.904);
   background-color: rgba(226, 128, 0, 0.267);
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   border-radius: 7px;
   border: 1px rgba(255, 115, 0, 0.164) solid;
 
@@ -305,6 +308,7 @@ body {
 
 .cards {
   min-width: 220px;
+  width: auto;
   margin: 10px;
   flex-grow: 1;
   font-weight: 900;
@@ -328,14 +332,14 @@ body {
   border-radius: 5px;
   padding: 5px;
   background-color: #19191ad2;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 .cards div p {
   margin-top: 7px;
-  padding: 5px;
+  padding: 8px;
   background-color: #19191ad2;
-  font-size: 2rem;
+  font-size: 3rem;
   border-radius: 7px;
 }
 
@@ -407,14 +411,17 @@ body {
     flex-basis: 20%;
     margin: 30px;
   }
+}
 
-  .cards p {
-    font-size: xx-large;
+@media (max-width: 890px) {
+  html{
+    font-size: 55%;
   }
 }
 
-@media (max-width: 800px) {
-  .cards p {
-    font-size: xx-large;
+@media (max-width: 500px) {
+  html{
+    font-size: 45%;
   }
 }
+
