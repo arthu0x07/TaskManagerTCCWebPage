@@ -85,8 +85,8 @@ function AddCategoria(dias, descrição) {
   idcards++;
 
 
-  /* Muda a cor de fundo do Card */
-  newcard.style.backgroundColor = coresaleatorias();
+  // /* Muda a cor de fundo do Card */
+  // newcard.style.backgroundColor = coresaleatorias();
 
 
   /* Adiciona o card criado dentro do container */

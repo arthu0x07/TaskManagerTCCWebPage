@@ -8,38 +8,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <title>Seu perfil</title>
+    <link rel="shortcut icon" href="imgs/homework.png" type="image/x-icon">
+    <title>YourToDoApp</title>
 </head>
 <body>
     <main class="conteiner-geral">
+        <section class="menu-create">
+            <h2>aqui você cria... ✔️</h2>
+            <p>alguns campos são obrigatórios</p>
+        </section>
+
         <section class="main-conteiner">
-            
-            <div class="imagemEtxts">
-                <img src="imgs/fotinha.jpg" alt="mihafoto">
-                
-                <div class="txts">
-                    <h2>Arthur Santos</h2>
-                    <p>@arthu0x07</p>
-                </div>
-            </div>
-
-            <div class="botãoEdit">
-                <i class="far fa-edit">Edite</i>
-            </div>
-
+            <h1 class="main-title">Seu ToDoApp para produtividade <span id="notebook-title">📚</span> </h1>
             <div class="conteiner-addTarefa">
-                <form action="#" id="formscadastro">
-                    <input type="text" placeholder="dias" id="formsinputdias">
-                    <input type="text" placeholder="descrição" id="formsinputdesc">
-                    <button id="button"><i class="fas fa-plus-square"></i></button>
-                    <!-- <input type="submit" value="adicionar" id="button"> -->
-                </form>
-
                 <div id="container-form-erroDescNull"> <p id="form-mensagem-erroDescNull"> não crie tarefas vazias amigo </p> </div>
-
                 <div id="container-form-erroDaysNull"> <p id="form-mensagem-erroDaysNull"> não colocou os dias amigo </p> </div>
-
-                <!-- <div id="container-form-erroTesting"> <p id="form-mensagem-erroDescNull"> não crie tarefas vazias amigo </p> </div> -->
             </div>
 
             <div class="conteiner-card-expandido" data-idcardatual="null">
@@ -65,6 +48,12 @@
             <div class="container-cards" data-testando="45">
                 <!-- Cards vem aqui -->
             </div>
+        </section>
+            
+        <section class="menu-organize">
+            <h2>aqui você filtra! 📋</h2>
+            <p>organizando suas tarefas...</p>
+
         </section>
     </main>
     
