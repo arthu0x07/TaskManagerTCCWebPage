@@ -22,9 +22,8 @@ async function DeleteTasks(id){
   
 }
 
-// Cria task, está funcionando, mas precisamos de uma função para converter quando pegarmos o valor do forms
+// Cria task, está funcionando, mas precisamos de uma função para converter quando pegarmos o valor data do forms
 async function CreateTasks(title, description, datetask){
-  // O Servidor vai retornar o ID que vamos passar para o createCard
   // Vai receber valores do forms...
 
   const task = {
@@ -37,11 +36,13 @@ async function CreateTasks(title, description, datetask){
 
   response = await fetch(`${endpoint}`, options = {headers: { 'Content-Type': 'application/json' }, mode: 'cors', method: 'POST', body: JSON.stringify(task)}).then(response => response.json());
 
-  CreateCard(response.id, response.title, response.description, TaskFormatDateForCard(response.when))
+  SearchTasks()
 }
 
 //Solicita para o servidor as tasks e renderiza usando a função vista.
 async function SearchTasks(){
+  await CleanCardConteiner()
+
   var data = '';
   data = await fetch(`${endpoint}/filter/all/${AuthKey}`, options = {method: 'GET', mode: 'cors'}).then(response => response.json())
   
@@ -116,20 +117,36 @@ function CleanCardConteiner(){
   containerCards.innerHTML = "";
 }
 
+// Adiciona eventos no forms, retem os valores, e envia para a função de criar tarefas no banco.
+Forms = document.querySelector(".conteiner-forms");
+Forms.addEventListener('submit', FormReceiveValue );
+function FormReceiveValue(e){
+  e.preventDefault();
+
+  ValueTitle = Forms[0].value;
+  ValueDescription = Forms[1].value;
+  ValueDate = Forms[2].value;
+
+  CreateTasks(ValueTitle, ValueDescription, ValueDate);
+}
+
+
+
+
+
+
 // Busca as tasks sempre que a página é carregada
 SearchTasks();
 
 
-// Adicionar eventos para receber valores e jogar na função de cadastrar
-InputTitle = document.querySelector("#title");
-Description = document.querySelector("#textarea-create")
-When = document.querySelector("#date");
-Submit = document.querySelector("#botaoenviar");
 
-console.log(InputTitle);
-console.log(Description);
-console.log(When);
-console.log(Submit);
+
+
+
+
+
+
+
 
 
 

@@ -6,7 +6,6 @@
   text-decoration: none;
   font-family: 'Roboto';
   color: rgba(245, 245, 245, 0.788);
-  background-color: #181818;
   color: #a7a9be;
 }
 
@@ -18,6 +17,7 @@ body {
   display: flex;
   justify-content: center;
   padding: 10px 0px;
+  background-color: rgb(32, 1, 40);
 }
 
 /* ------------------------------------------------------------------------------------------ */
@@ -30,14 +30,13 @@ body {
   justify-content: space-evenly;
   border-radius: 5px;
   color: #fffffe;
-  background-color: #067aff;
+  background-color: rgb(29, 133, 4);
   font-family: 'Dancing Script';
 }
 
 .main-subtitle {
   margin-top: 20px;
   color: #fffffe;
-  background-color: #067aff;
   font-family: 'Dancing Script';
   padding: 8px;
   border-radius: 2px;
@@ -56,10 +55,11 @@ body {
   align-items: center;
   width: 100%;
   margin-top: 45px;
+  border: 0;
   min-height: 70vh;
   margin-bottom: 45px;
-  border: 5px solid #067aff;
   border-radius: 5px;
+  background-color: rgb(100, 0, 125);
   overflow: hidden;
 }
 
@@ -115,6 +115,7 @@ body {
   box-sizing: border-box;
   color: #fffffe;
   resize: none;
+  background-color: rgb(100, 0, 125);
 }
 
 .descricao-tarefa-expandida::placeholder {
@@ -169,7 +170,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #067aff;
+  background-color: rgb(100, 0, 125);
 }
 
 .cards div {
@@ -250,7 +251,6 @@ body {
   padding: 10px;
   color: #fffffe;
   border-radius: 2px 2px 0px 2px;
-  background-color: #1f1e1e;
   font-family: 'Dancing Script';
   font-style: normal;
 }
@@ -260,7 +260,6 @@ body {
   color: #fffffe;
   align-self: center;
   border-radius: 0px 2px 0px 2px;
-  background-color: #ff8906;
   padding: 5px;
   font-weight: 900;
   font-family: 'Dancing Script';
@@ -270,10 +269,11 @@ body {
 #text-menucreate {
   margin-top: 30px;
   align-self: center;
-  background-color: #333333;
   width: 90%;
   text-align: center;
   font-size: 2rem;
+  background-color: rgb(133, 4, 29);
+  border-radius: 20px 10px 43px 9px;
 }
 
 .conteiner-forms {
@@ -290,9 +290,9 @@ body {
   font-weight: 200;
   color: #fffffe;
   font-family: 'Dancing Script';
-  background-color: #333333;
+  background-color: rgb(54, 2, 67);
   padding: 5px;
-  border-radius: 2px;
+  border-radius: 20px 10px;
 }
 
 .conteiner-forms input {
@@ -301,7 +301,7 @@ body {
   height: 40px;
   margin-bottom: 30px;
   margin-top: 5px;
-  background-color: #333333;
+  background-color: rgb(43, 2, 53);
   color: #fffffe;
   border: 0;
   font-weight: 900;
@@ -321,7 +321,7 @@ body {
   margin-bottom: 30px;
   margin-top: 10px;
   box-sizing: border-box;
-  background-color: #333333;
+  background-color: rgb(43, 2, 53);
   color: #fffffe;
   border: 0;
   font-size: 2rem;
@@ -338,9 +338,7 @@ body {
   color: #fffffe7a;
   display: flex;
   height: 40px;
-}
-
-#date::placeholder {
+  padding: 5px;
 }
 
 #botaoenviar {
@@ -348,48 +346,14 @@ body {
   height: auto;
   margin-bottom: 30px;
   margin-top: 5px;
-  background-color: #333333;
+  background-color: rgb(4, 133, 108);
+  border-radius: 10px 23px 15px;
   color: #fffffe;
   border: 0;
   font-weight: 900;
   padding: 5px;
   font-size: 2rem;
   font-family: 'Dancing Script';
-}
-
-.menu-organize {
-  display: flex;
-  justify-content: stretch;
-  align-items: flex-start;
-  flex-direction: column;
-  width: 25%;
-  padding: 10px;
-  border-left: 1px solid #3333334f;
-  /* vão receber display none, vão ser dois menus de cada lado da tela, uma para setar os botões de listagem e outro pra criar */
-}
-
-.menu-organize h2 {
-  margin-top: 20px;
-  font-size: 3rem;
-  padding: 10px;
-  color: #fffffe;
-  border-radius: 2px 2px 2px 0px;
-  background-color: #a786df;
-  align-self: flex-end;
-
-  font-weight: 900;
-  font-family: 'Dancing Script';
-  font-style: normal;
-}
-
-.menu-organize p {
-  font-size: 1.4rem;
-  color: #fffffe;
-  align-self: center;
-  border-radius: 2px 0px 2px 2px;
-  background-color: #ff8906;
-  padding: 5px;
-  font-weight: 900;
 }
 
 @media (max-width: 1073px) {
@@ -428,10 +392,6 @@ body {
 }
 
 @media (max-width: 1024px) {
-  .menu-organize {
-    display: none;
-  }
-
   .main-conteiner {
     width: 60%;
   }
@@ -462,7 +422,7 @@ body {
     font-size: 45%;
   }
 
-  .cards{
+  .cards {
     min-width: 190px;
   }
 }
