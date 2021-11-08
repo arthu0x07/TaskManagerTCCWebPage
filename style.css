@@ -6,7 +6,7 @@
   text-decoration: none;
   font-family: 'Roboto';
   color: rgba(245, 245, 245, 0.788);
-  background-color: #0f0e17;
+  background-color: #181818;
   color: #a7a9be;
 }
 
@@ -34,7 +34,7 @@ body {
   font-family: 'Dancing Script';
 }
 
-.main-subtitle{
+.main-subtitle {
   margin-top: 20px;
   color: #fffffe;
   background-color: #067aff;
@@ -115,7 +115,6 @@ body {
   box-sizing: border-box;
   color: #fffffe;
   resize: none;
-
 }
 
 .descricao-tarefa-expandida::placeholder {
@@ -157,8 +156,8 @@ body {
 }
 
 .cards {
-  min-width: 270px;
-  width: 50%;
+  min-width: 280px;
+  width: 30%;
   margin: 10px;
   flex-grow: 1;
   font-weight: 900;
@@ -268,7 +267,7 @@ body {
   font-style: normal;
 }
 
-#text-menucreate{
+#text-menucreate {
   margin-top: 30px;
   align-self: center;
   background-color: #333333;
@@ -309,7 +308,6 @@ body {
   padding: 5px;
   font-size: 2rem;
   font-family: 'Roboto';
-
 }
 
 .conteiner-forms input:focus-visible {
@@ -336,16 +334,16 @@ body {
   outline: -webkit-focus-ring-color auto 0px;
 }
 
-#date{
-  color:#fffffe7a;
+#date {
+  color: #fffffe7a;
   display: flex;
   height: 40px;
 }
 
-#date::placeholder{
+#date::placeholder {
 }
 
-#botaoenviar{
+#botaoenviar {
   width: 100%;
   height: auto;
   margin-bottom: 30px;
@@ -357,7 +355,6 @@ body {
   padding: 5px;
   font-size: 2rem;
   font-family: 'Dancing Script';
-
 }
 
 .menu-organize {
@@ -430,14 +427,42 @@ body {
   }
 }
 
+@media (max-width: 1024px) {
+  .menu-organize {
+    display: none;
+  }
+
+  .main-conteiner {
+    width: 60%;
+  }
+
+  .menu-create {
+    width: 40%;
+  }
+}
+
 @media (max-width: 890px) {
   html {
     font-size: 55%;
   }
 }
 
+@media (max-width: 768px) {
+  .main-conteiner {
+    width: 100%;
+  }
+
+  .menu-create {
+    display: none;
+  }
+}
+
 @media (max-width: 500px) {
   html {
     font-size: 45%;
+  }
+
+  .cards{
+    min-width: 190px;
   }
 }
