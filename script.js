@@ -36,7 +36,7 @@ function AddCategoria(dias, descrição) {
   }
 
 
-  /* Base do cards */
+  /* Base do cards ------------------- criar isso aqui foi um erro...*/ 
   var newcard = document.createElement("div");
   newcard.classList.add("cards");
   newcard.innerHTML = `
@@ -100,7 +100,7 @@ function AddCategoria(dias, descrição) {
 }
 
 function ApresentaCard(event){
-  /* Colocar eventos em um botão do card para sumir com o card*/
+  /* Colocar eventos em um botão do card para sumir com o card*/
   let conteinerCardOcultodaViladaFolha = document.querySelector(".conteiner-card-expandido");
   
 
