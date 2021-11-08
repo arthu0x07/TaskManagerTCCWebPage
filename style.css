@@ -17,7 +17,7 @@ html {
 body {
   display: flex;
   justify-content: center;
-  padding-top: 10px;
+  padding: 10px 0px;
 }
 
 /* ------------------------------------------------------------------------------------------ */
@@ -27,13 +27,14 @@ body {
   padding: 10px;
   width: 80%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   border-radius: 5px;
   color: #fffffe;
   background-color: #ff8906;
+  font-family: 'Dancing Script';
 }
 
-#notebook-title{
+#notebook-title {
   background-color: transparent;
 }
 
@@ -47,8 +48,8 @@ body {
   margin-top: 45px;
   min-height: 70vh;
   margin-bottom: 45px;
-  border: 3px solid #ff8906;
-
+  border: 1px solid #ff8906;
+  overflow: hidden;
 }
 
 .header-card-expandido {
@@ -76,7 +77,6 @@ body {
 
 .section1-header-card h2 {
   border-radius: 5px;
-  font-style: italic;
   color: #fffffe;
   padding: 20px;
 }
@@ -95,14 +95,16 @@ body {
 }
 
 .descricao-tarefa-expandida {
-  border-radius: 15px;
-  border: 0px solid #ff8906;
+  border: 0;
   font-size: 2.5rem;
+  font-weight: 900;
   padding: 10px;
   width: 100%;
   height: 100%;
   box-sizing: border-box;
   color: #fffffe;
+  resize: none;
+
 }
 
 .descricao-tarefa-expandida::placeholder {
@@ -131,121 +133,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
   width: 50%;
-}
-
-.conteiner-addTarefa {
-  margin: 20px;
-  background-color: #1b1b1b;
-  border-radius: 10px;
-  flex-basis: 100%;
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-}
-
-#formscadastro {
-  flex-grow: 1;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 10px;
-}
-
-#formscadastro input {
-  font-weight: 500;
-  font-size: 2.5rem;
-  background-color: #292929;
-  border-radius: 2px;
-  border: 0px solid;
-  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.425);
-
-  padding: 15px;
-}
-
-#formcadastro input:focus {
-  border: 0px transparent none;
-}
-
-#formsinputdias {
-  order: 2;
-  flex-shrink: 1;
-  flex-grow: 1;
-  margin-right: 2px;
-  margin: 2px;
-}
-
-#formsinputdias::placeholder {
-  color: #ffffff5e;
-  font-weight: 600;
-  font-family: cursive;
-}
-
-#formsinputdesc {
-  order: 1;
-  flex-shrink: 0;
-  flex-grow: 4;
-  margin: 2px;
-}
-
-#formsinputdesc::placeholder {
-  color: #ffffff5e;
-  font-weight: 600;
-  font-family: cursive;
-}
-
-#button {
-  order: 4;
-  flex-grow: 1;
-  margin: 2px;
-  color: #ffffff8c;
-  font-weight: 600;
-
-  padding: 5px 10px;
-  order: 3;
-  font-size: 3rem;
-  background-color: #292929;
-  border-style: none;
-  box-shadow: 0 3px 3px 0 rgb(27, 27, 27);
-}
-
-#button:hover {
-  background-color: rgba(19, 18, 19, 0.274);
-}
-
-#button:focus {
-}
-
-#container-form-erroDescNull {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 10px;
-}
-
-#form-mensagem-erroDescNull {
-  padding: 10px;
-  color: rgba(255, 41, 4, 0.507);
-  font-weight: 900;
-  font-size: 2.5rem;
-  border-radius: 7px;
-  border: 1px rgba(184, 65, 44, 0.164) solid;
-}
-
-#container-form-erroDaysNull {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 10px;
-}
-
-#form-mensagem-erroDaysNull {
-  padding: 10px;
-  color: rgba(226, 128, 0, 0.904);
-  font-weight: 900;
-  font-size: 2.5rem;
-  border-radius: 7px;
-  border: 1px rgba(255, 115, 0, 0.164) solid;
 }
 
 .container-cards {
@@ -339,21 +226,26 @@ body {
   display: flex;
   justify-content: stretch;
   align-items: flex-start;
+  box-sizing: border-box;
   flex-direction: column;
   width: 25%;
-  padding: 10px;
+  padding: 0px 5px;
+  border-right: 1px solid #3333334f;
   /* vão receber display none, vão ser dois menus de cada lado da tela, uma para setar os botões de listagem e outro pra criar */
 }
 
-.menu-create h2{
-  font-size: 1.5rem;
+.menu-create h2 {
+  margin-top: 20px;
+  font-size: 3rem;
   padding: 10px;
   color: #fffffe;
   border-radius: 2px 2px 0px 2px;
-  background-color: #ff8906;
+  background-color: #1f1e1e;
+  font-family: 'Dancing Script';
+  font-style: normal;
 }
 
-.menu-create p{
+.menu-create p {
   font-size: 1.4rem;
   color: #fffffe;
   align-self: center;
@@ -361,8 +253,101 @@ body {
   background-color: #ff8906;
   padding: 5px;
   font-weight: 900;
+  font-family: 'Dancing Script';
+  font-style: normal;
 }
 
+#text-menucreate{
+  margin-top: 30px;
+  align-self: center;
+  background-color: #333333;
+  width: 90%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.conteiner-forms {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.labels-input {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #fffffe;
+  font-family: 'Dancing Script';
+  background-color: #333333;
+  padding: 5px;
+  border-radius: 2px;
+}
+
+.conteiner-forms input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  background-color: #333333;
+  color: #fffffe;
+  border: 0;
+  font-weight: 900;
+  padding: 5px;
+  font-size: 2rem;
+  font-family: 'Roboto';
+
+}
+
+.conteiner-forms input:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+#textarea-create {
+  width: 280px;
+  height: 30vh;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  background-color: #333333;
+  color: #fffffe;
+  border: 0;
+  font-size: 2rem;
+  padding: 5px;
+  resize: none;
+  font-weight: 900;
+}
+
+#textarea-create:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+#date{
+  color:#fffffe7a;
+  display: flex;
+  height: 40px;
+}
+
+#date::placeholder{
+}
+
+#botaoenviar{
+  width: 100%;
+  height: auto;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  background-color: #333333;
+  color: #fffffe;
+  border: 0;
+  font-weight: 900;
+  padding: 5px;
+  font-size: 2rem;
+  font-family: 'Dancing Script';
+
+}
 
 .menu-organize {
   display: flex;
@@ -371,19 +356,25 @@ body {
   flex-direction: column;
   width: 25%;
   padding: 10px;
+  border-left: 1px solid #3333334f;
   /* vão receber display none, vão ser dois menus de cada lado da tela, uma para setar os botões de listagem e outro pra criar */
 }
 
-.menu-organize h2{
-  font-size: 1.5rem;
+.menu-organize h2 {
+  margin-top: 20px;
+  font-size: 3rem;
   padding: 10px;
   color: #fffffe;
   border-radius: 2px 2px 2px 0px;
-  background-color: #ff8906;
+  background-color: #a786df;
   align-self: flex-end;
+
+  font-weight: 900;
+  font-family: 'Dancing Script';
+  font-style: normal;
 }
 
-.menu-organize p{
+.menu-organize p {
   font-size: 1.4rem;
   color: #fffffe;
   align-self: center;

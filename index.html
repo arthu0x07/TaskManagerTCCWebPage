@@ -7,7 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Dongle:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Indie+Flower&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="imgs/homework.png" type="image/x-icon">
     <title>YourToDoApp</title>
 </head>
@@ -15,15 +16,25 @@
     <main class="conteiner-geral">
         <section class="menu-create">
             <h2>aqui você cria... ✔️</h2>
-            <p>alguns campos são obrigatórios</p>
+            <p id="text-menucreate">Crie em apenas 4 passos ⚡</p>
+
+
+            <form action="#" class="conteiner-forms">
+                <label for="title" class="labels-input">-> identifique ❔</label>
+                <input type="text" name="title" id="title" placeholder="...">
+
+                <label for="textarea-create" class="labels-input">-> descreva ✏️</label>
+                <textarea name="desc" id="textarea-create" placeholder="..."></textarea>
+
+                <label for="date" class="labels-input">-> selecione 📆</label>
+                <input type="datetime-local" name="title" id="date" placeholder="..."/>
+                
+                <input type="submit" name="cadastrar" id="botaoenviar" value="cadastre ✅">
+            </form>
         </section>
 
         <section class="main-conteiner">
             <h1 class="main-title">Seu ToDoApp para produtividade <span id="notebook-title">📚</span> </h1>
-            <div class="conteiner-addTarefa">
-                <div id="container-form-erroDescNull"> <p id="form-mensagem-erroDescNull"> não crie tarefas vazias amigo </p> </div>
-                <div id="container-form-erroDaysNull"> <p id="form-mensagem-erroDaysNull"> não colocou os dias amigo </p> </div>
-            </div>
 
             <div class="conteiner-card-expandido" data-idcardatual="null">
                 <div class="header-card-expandido">
@@ -41,7 +52,7 @@
                 </div>
         
                 <div class="section3-main-card">
-                    <textarea class="descricao-tarefa-expandida" placeholder="descreva aqui...">asdasds</textarea>
+                    <textarea class="descricao-tarefa-expandida" placeholder="descreva aqui...">Dia de entregar o TCC do CP2. TodoApp...</textarea>
                 </div>
             </div>
 
@@ -69,8 +80,6 @@
             
         <section class="menu-organize">
             <h2>aqui você filtra! 📋</h2>
-            <p>organizando suas tarefas...</p>
-
         </section>
     </main>
     
