@@ -30,8 +30,18 @@ body {
   justify-content: space-evenly;
   border-radius: 5px;
   color: #fffffe;
-  background-color: #ff8906;
+  background-color: #067aff;
   font-family: 'Dancing Script';
+}
+
+.main-subtitle{
+  margin-top: 20px;
+  color: #fffffe;
+  background-color: #067aff;
+  font-family: 'Dancing Script';
+  padding: 8px;
+  border-radius: 2px;
+  font-size: 3rem;
 }
 
 #notebook-title {
@@ -48,7 +58,8 @@ body {
   margin-top: 45px;
   min-height: 70vh;
   margin-bottom: 45px;
-  border: 1px solid #ff8906;
+  border: 5px solid #067aff;
+  border-radius: 5px;
   overflow: hidden;
 }
 
@@ -159,7 +170,7 @@ body {
   flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
-  background-color: #ff8906;
+  background-color: #067aff;
 }
 
 .cards div {
