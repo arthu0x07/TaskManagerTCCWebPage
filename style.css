@@ -156,7 +156,7 @@ body {
 }
 
 .cards {
-  min-width: 280px;
+  min-width: 320px;
   width: 30%;
   margin: 10px;
   flex-grow: 1;
