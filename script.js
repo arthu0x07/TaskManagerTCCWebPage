@@ -22,16 +22,16 @@ async function DeleteTasks(id){
   
 }
 
-// Cria task, está funcionando, mas precisamos de uma função para converter quando pegarmos o valor data do forms
+// Cria task, consertado utilizando a função de data.
 async function CreateTasks(title, description, datetask){
   // Vai receber valores do forms...
-
+  console.log(datetask)
   const task = {
     macadress: AuthKey,
     type: "8",
     title: title,
     description: description,
-    when: datetask
+    when: TaskFormatDateForCreate(datetask)
   }
 
   response = await fetch(`${endpoint}`, options = {headers: { 'Content-Type': 'application/json' }, mode: 'cors', method: 'POST', body: JSON.stringify(task)}).then(response => response.json());
@@ -54,7 +54,6 @@ async function SearchTasks(){
 
 // Função que cria os cards na tela, chamada após ter sido enviada para o servidor. 
 function CreateCard(_id, title, description, datetask){
-  console.log('entrou')
     // Div Principal - Recebe os dataSets
   var TaskElement = document.createElement("div");
   
@@ -98,10 +97,15 @@ function TaskFormatDateForCard(date){
   return data.toLocaleDateString('pt-br');
 }
 
-// Não Está funcionando, preciso conseguir converter data brasileira para americada dd/MM para MM/dd
-function TaskFormatDateForCreate(datebrasil){
-  data = new Date(datebrasil);
-  console.log(data.getDay())
+// Funcionando - Data sendo convertida para o padrão utilizado no backend
+function TaskFormatDateForCreate(DateBrasilFormat){
+  ano = `${DateBrasilFormat[0]}${DateBrasilFormat[1]}${DateBrasilFormat[2]}${DateBrasilFormat[3]}`
+  mes = `${DateBrasilFormat[5]}${DateBrasilFormat[6]}`
+  dia = `${DateBrasilFormat[8]}${DateBrasilFormat[9]}`
+
+  DataBackEndFormat = `${mes}/${dia}/${ano}`
+
+  return DataBackEndFormat;
 }
 
 // Vai ser usada para atualizar os itens
@@ -148,7 +152,6 @@ function StartMenu(){
     MenuIsOpen = true;
   }
 }
-
 
 function CloseMenu(){
   ContainerMenu.style.animationName = "FecharMenu";
