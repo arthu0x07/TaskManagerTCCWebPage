@@ -1,5 +1,6 @@
 const AuthKey = '15:15:15:15:15';
 const endpoint = 'http://localhost:3333/task/'
+var MenuIsOpen = true;
 
 // Sempre que uma tarefa for cadastrada, atualizada ou deletada chamar a função de limpar as tarefas do container e chamar novamente o searchTasks.
 
@@ -129,6 +130,43 @@ function FormReceiveValue(e){
 
   CreateTasks(ValueTitle, ValueDescription, ValueDate);
 }
+
+ContainerMenu = document.querySelector(".menu-create");
+console.log(ContainerMenu);
+
+ButtonMenu = document.querySelectorAll(".botaomenu");
+ButtonMenu[0].addEventListener('click', StartMenu)
+ButtonMenu[1].addEventListener('click', StartMenu)
+
+function StartMenu(){
+  console.log("click")
+
+  if(MenuIsOpen == true){
+    CloseMenu();
+    MenuIsOpen = false;
+  }
+  
+  else{
+    OpenMenu()
+    MenuIsOpen = true;
+  }
+}
+
+
+function CloseMenu(){
+  ContainerMenu.style.animationName = "FecharMenu";
+}
+
+function OpenMenu(){
+  ContainerMenu.style.animationName = "AbrirMenu";
+
+}
+
+
+
+
+
+
 
 
 

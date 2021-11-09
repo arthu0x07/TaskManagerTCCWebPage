@@ -1,0 +1,35 @@
+.main-conteiner {
+  flex-grow: 1;
+}
+
+.menu-create {
+  position: absolute !important;
+  z-index: 8;
+  transform: translateX(0px);
+
+  animation-name: x;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+
+@keyframes FecharMenu{
+  from{
+    transform: translateX(0px);
+  }
+
+  to{
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes AbrirMenu{
+  from{
+    transform: translateX(-100%);
+  }
+
+  to{
+    transform: translateX(0px);
+  }
+}

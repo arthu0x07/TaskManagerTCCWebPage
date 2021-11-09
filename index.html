@@ -8,14 +8,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Indie+Flower&display=swap" rel="stylesheet">    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="animate.css">
     <link rel="shortcut icon" href="imgs/homework.png" type="image/x-icon">
     <title>YourToDoApp</title>
 </head>
 <body>
     <main class="conteiner-geral">
         <section class="menu-create">
-            <h2>aqui você cria... ✔️</h2>
+            
+            <div class="conteiner-top-menu">
+                <h2>aqui você cria... ✔️</h2>
+                <i class="fas fa-bars botaomenu" id="button-menu-relative"></i>
+            </div>
+
             <p id="text-menucreate">Crie em apenas 4 passos ⚡</p>
 
 
@@ -34,7 +41,9 @@
         </section>
 
         <section class="main-conteiner">
-            <h1 class="main-title">Seu ToDoApp para produtividade <span id="notebook-title">📚</span> </h1>
+            <h1 class="main-title">Seu ToDoApp para produtividade <span id="notebook-title">📚</span> </h1> 
+            <i class="fas fa-bars botaomenu" id="button-main-relative"></i>
+
             <h1 class="main-subtitle">aqui você visualiza... 👀</h1>
             <div class="conteiner-card-expandido" data-idcardatual="null">
                 <div class="header-card-expandido">

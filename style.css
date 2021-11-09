@@ -16,11 +16,171 @@ html {
 body {
   display: flex;
   justify-content: center;
+  align-items: stretch;
   padding: 10px 0px;
   background-color: rgb(32, 1, 40);
 }
 
 /* ------------------------------------------------------------------------------------------ */
+
+.menu-create {
+  display: flex;
+  justify-content: stretch;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 30%;
+  background-color: rgb(32, 1, 40);
+  padding: 20px;
+  box-sizing: border-box;
+
+  position: absolute;
+  z-index: 8;
+  transform: translateX(0px);
+  /* vão receber display none, vão ser dois menus de cada lado da tela, uma para setar os botões de listagem e outro pra criar */
+}
+
+.menu-create h2 {
+  margin-top: 20px;
+  font-size: 3rem;
+  padding: 10px;
+  color: #fffffe;
+  border-radius: 2px 2px 0px 2px;
+  font-family: 'Dancing Script';
+  font-style: normal;
+}
+
+#button-menu-relative {
+  position: relative;
+  left: 3%;
+  margin: 0px 20px;
+  font-size: 20px;
+}
+
+.menu-create p {
+  font-size: 1.4rem;
+  color: #fffffe;
+  align-self: center;
+  border-radius: 0px 2px 0px 2px;
+  padding: 5px;
+  font-weight: 900;
+  font-family: 'Dancing Script';
+  font-style: normal;
+}
+
+#text-menucreate {
+  margin-top: 30px;
+  albuttgn-self: center;
+  width: 90%;
+  text-align: center;
+  font-size: 2rem;
+  background-color: rgb(133, 4, 29);
+  border-radius: 20px 10px 43px 9px;
+}
+
+.conteiner-forms {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.labels-input {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 200;
+  color: #fffffe;
+  font-family: 'Dancing Script';
+  background-color: rgb(54, 2, 67);
+  padding: 5px;
+  border-radius: 20px 10px;
+}
+
+.conteiner-forms input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 40px;
+  margin-bottom: 30px;
+  margin-top: 5px;
+  background-color: rgb(43, 2, 53);
+  color: #fffffe;
+  border: 0;
+  font-weight: 900;
+  padding: 5px;
+  font-size: 2rem;
+  font-family: 'Roboto';
+}
+
+.conteiner-forms input:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+#textarea-create {
+  width: 280px;
+  height: 30vh;
+  width: 100%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  box-sizing: border-box;
+  background-color: rgb(43, 2, 53);
+  color: #fffffe;
+  border: 0;
+  font-size: 2rem;
+  padding: 5px;
+  resize: none;
+  font-weight: 900;
+}
+
+#textarea-create:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+#date {
+  color: #fffffe7a;
+  display: flex;
+  height: 40px;
+  padding: 5px;
+}
+
+#botaoenviar {
+  width: 90%;
+  margin: 20px auto;
+  height: auto;
+  background-color: rgb(4, 133, 108);
+  border-radius: 10px 23px 15px;
+  color: #fffffe;
+  border: 0;
+  font-weight: 900;
+  padding: 5px;
+  font-size: 2rem;
+  font-family: 'Dancing Script';
+}
+
+.conteiner-top-menu {
+  display: flex;
+  width: 100%;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+#button-main-relative {
+  position: relative;
+  left: 3%;
+  margin: 0px 20px;
+  font-size: 20px;
+}
+
+.main-conteiner {
+  padding: 10px;
+  min-height: 50vh;
+  max-height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 60%;
+  flex-grow: 1;
+}
 
 .main-title {
   font-size: 3rem;
@@ -134,18 +294,6 @@ body {
   display: flex;
 }
 
-.main-conteiner {
-  padding: 10px;
-  min-height: 50vh;
-  max-height: auto;
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  width: 50%;
-}
-
 .container-cards {
   min-height: 20vh;
   height: auto;
@@ -231,129 +379,14 @@ body {
   background-color: #725200;
 }
 
-/* ----------------------------- Menus Retrateis ---------------------------------- */
-
-.menu-create {
-  display: flex;
-  justify-content: stretch;
-  align-items: flex-start;
-  box-sizing: border-box;
-  flex-direction: column;
-  width: 25%;
-  padding: 0px 5px;
-  border-right: 1px solid #3333334f;
-  /* vão receber display none, vão ser dois menus de cada lado da tela, uma para setar os botões de listagem e outro pra criar */
-}
-
-.menu-create h2 {
-  margin-top: 20px;
-  font-size: 3rem;
-  padding: 10px;
-  color: #fffffe;
-  border-radius: 2px 2px 0px 2px;
-  font-family: 'Dancing Script';
-  font-style: normal;
-}
-
-.menu-create p {
-  font-size: 1.4rem;
-  color: #fffffe;
-  align-self: center;
-  border-radius: 0px 2px 0px 2px;
-  padding: 5px;
-  font-weight: 900;
-  font-family: 'Dancing Script';
-  font-style: normal;
-}
-
-#text-menucreate {
-  margin-top: 30px;
-  align-self: center;
-  width: 90%;
-  text-align: center;
-  font-size: 2rem;
-  background-color: rgb(133, 4, 29);
-  border-radius: 20px 10px 43px 9px;
-}
-
-.conteiner-forms {
-  margin-top: 50px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.labels-input {
-  display: inline-block;
-  font-size: 2rem;
-  font-weight: 200;
-  color: #fffffe;
-  font-family: 'Dancing Script';
-  background-color: rgb(54, 2, 67);
-  padding: 5px;
-  border-radius: 20px 10px;
-}
-
-.conteiner-forms input {
-  width: 100%;
-  box-sizing: border-box;
-  height: 40px;
-  margin-bottom: 30px;
-  margin-top: 5px;
-  background-color: rgb(43, 2, 53);
-  color: #fffffe;
-  border: 0;
-  font-weight: 900;
-  padding: 5px;
-  font-size: 2rem;
-  font-family: 'Roboto';
-}
-
-.conteiner-forms input:focus-visible {
-  outline: -webkit-focus-ring-color auto 0px;
-}
-
-#textarea-create {
-  width: 280px;
-  height: 30vh;
-  width: 100%;
-  margin-bottom: 30px;
-  margin-top: 10px;
-  box-sizing: border-box;
-  background-color: rgb(43, 2, 53);
-  color: #fffffe;
-  border: 0;
-  font-size: 2rem;
-  padding: 5px;
-  resize: none;
-  font-weight: 900;
-}
-
-#textarea-create:focus-visible {
-  outline: -webkit-focus-ring-color auto 0px;
-}
-
-#date {
-  color: #fffffe7a;
-  display: flex;
-  height: 40px;
-  padding: 5px;
-}
-
-#botaoenviar {
-  width: 100%;
-  height: auto;
-  margin-bottom: 30px;
-  margin-top: 5px;
-  background-color: rgb(4, 133, 108);
-  border-radius: 10px 23px 15px;
-  color: #fffffe;
-  border: 0;
-  font-weight: 900;
-  padding: 5px;
-  font-size: 2rem;
-  font-family: 'Dancing Script';
+@media (min-width: 768px) {
+  #button-menu-relative {
+    display: none;
+    position: relative;
+    left: 3%;
+    margin: 0px 20px;
+    font-size: 20px;
+  }
 }
 
 @media (max-width: 1073px) {
@@ -401,19 +434,29 @@ body {
   }
 }
 
-@media (max-width: 890px) {
-  html {
-    font-size: 55%;
-  }
-}
-
 @media (max-width: 768px) {
   .main-conteiner {
     width: 100%;
   }
 
   .menu-create {
-    display: none;
+    position: absolute;
+    z-index: 6;
+    width: 100%;
+    border-radius: 0 0 40px 40px;
+    box-shadow: 0px 20px 30px black;
+  }
+
+  #button-menu-relative {
+    display: initial;
+    position: relative;
+    left: 0%;
+  }
+}
+
+@media (max-width: 890px) {
+  html {
+    font-size: 55%;
   }
 }
 
