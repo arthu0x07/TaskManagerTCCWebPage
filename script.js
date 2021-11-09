@@ -1,5 +1,5 @@
 const AuthKey = '15:15:15:15:15';
-var endpoint = 'http://192.168.1.3:3333/task'
+const endpoint = 'http://192.168.1.3:3333/task'
 var MenuIsOpen = true;
 
 // Sempre que uma tarefa for cadastrada, atualizada ou deletada chamar a função de limpar as tarefas do container e chamar novamente o searchTasks.
