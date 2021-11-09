@@ -130,11 +130,18 @@ function FormReceiveValue(e){
   ValueDate = Forms[2].value;
 
   CreateTasks(ValueTitle, ValueDescription, ValueDate);
+
+  CleanFormValues();
+}
+
+// Usada para resetar os valores dos campos após o cadastro...
+function CleanFormValues(e){
+  Forms[0].value = '';
+  Forms[1].value = '';
+  Forms[2].value = '';
 }
 
 ContainerMenu = document.querySelector(".menu-create");
-console.log(ContainerMenu);
-
 ButtonMenu = document.querySelectorAll(".botaomenu");
 ButtonMenu[0].addEventListener('click', StartMenu)
 ButtonMenu[1].addEventListener('click', StartMenu)

@@ -31,8 +31,8 @@ body {
   width: 30%;
   background-color: rgb(32, 1, 40);
   padding: 20px;
+  height: 200%;
   box-sizing: border-box;
-
   position: absolute;
   z-index: 8;
   transform: translateX(0px);
@@ -68,7 +68,6 @@ body {
 
 #text-menucreate {
   margin-top: 30px;
-  albuttgn-self: center;
   width: 90%;
   text-align: center;
   font-size: 2rem;
@@ -87,9 +86,9 @@ body {
 .labels-input {
   display: inline-block;
   font-size: 2rem;
-  font-weight: 200;
+  font-weight: 600;
   color: #fffffe;
-  font-family: 'Dancing Script';
+  font-family: 'Roboto';
   background-color: rgb(54, 2, 67);
   padding: 5px;
   border-radius: 20px 10px;
@@ -105,9 +104,13 @@ body {
   color: #fffffe;
   border: 0;
   font-weight: 900;
-  padding: 5px;
+  padding: 10px;
   font-size: 2rem;
   font-family: 'Roboto';
+}
+
+.conteiner-forms input::placeholder{
+  color: #fffffe57;
 }
 
 .conteiner-forms input:focus-visible {
@@ -128,6 +131,10 @@ body {
   padding: 5px;
   resize: none;
   font-weight: 900;
+}
+
+#textarea-create::placeholder{
+  color: #fffffe57;
 }
 
 #textarea-create:focus-visible {
@@ -458,6 +465,7 @@ body {
     position: absolute;
     z-index: 6;
     width: 100%;
+    height: auto;
     border-radius: 0 0 40px 40px;
     box-shadow: 0px 20px 30px black;
   }
