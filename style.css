@@ -336,40 +336,40 @@ body {
   border-radius: 5px;
   padding: 10px;
   box-sizing: border-box;
+
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
   background-color: rgb(100, 0, 125);
 }
 
-.cards div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: transparent;
-}
-
-.cards div h2 {
+.cards h2 {
   /* Altera todos os H2 da classe card, mesmo que não seja filhos diretos */
   border-radius: 5px;
   padding: 5px;
   background-color: #0f0e17e7;
   font-size: 2rem;
   color: #a7a9be;
+  width: 50%;
+  flex-shrink: 2;
 }
 
-.cards div p {
+.section-desc{
+  width: 100%;
+  margin-top: 7px;
+  border-radius: 5px;
   margin-top: 7px;
   padding: 8px;
-  background-color: #0f0e17e7;
   font-size: 2rem;
-  border-radius: 7px;
+  background-color: #0f0e17e7;
 }
 
-.testing-padding {
-  padding: 0px;
-  width: 90%;
+.div-botoes{
+  display: flex;
+  justify-content: flex-end;
+  min-width: 20%;
 }
 
 .div-botoes button {

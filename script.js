@@ -66,15 +66,11 @@ function CreateCard(_id, title, description, datetask){
     //Estrutura do Card
   TaskElement.classList.add("cards");
   TaskElement.innerHTML = `
-        <div>
-            <div class="testing-padding">
                 <h2>${datetask}</h2>
-            </div>
             <div class="div-botoes">
                 <button class="button-icon" id="button-visualizaTask"> <i class="far fa-eye"></i> </button>
                 <button class="button-icon" id="button-DeletaTask"> <i class="far fa-trash-alt"></i> </button>
             </div>
-        </div>
 
         <div class="section-desc">
             <p>${title}</p>
@@ -85,21 +81,24 @@ function CreateCard(_id, title, description, datetask){
   let containerCards = document.querySelector(".container-cards");
   containerCards.append(TaskElement);
 
-  let botaovisualizar = TaskElement.children[0].children[1].children[0];
-  let botaodeletar = TaskElement.children[0].children[1].children[1];
+  console.log(TaskElement)
+
+  let botaovisualizar = TaskElement.children[1].children[0];
+  let botaodeletar = TaskElement.children[1].children[1];
 
   botaovisualizar.addEventListener("click", () => {console.log("abre cont" + TaskElement.dataset.id)});
   botaodeletar.addEventListener("click", () => {DeleteTasks(TaskElement.dataset.id)});
 
     // Eventos utilizados para enviar dados do card para o conteiner expandido
-  let DivData = document.querySelector(`[data-id="${_id}"] .testing-padding`)
+  let DivData = document.querySelector(`[data-id="${_id}"] h2`)
   DivData.addEventListener('click', TransferData);
   let DivDesc = document.querySelector(`[data-id="${_id}"] .section-desc`)
   DivDesc.addEventListener('click', TransferData);
 }
 
+// Recebe informações de um evento de clique e passa para o conteiner expandido...
 function TransferData(e){
-  console.dir(this.parentNode);
+  console.log(this.parentNode.dataset);
 }
 
 // Está funcionando, pega no padrão americano e converte para PT-BR, usado para os cards
