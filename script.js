@@ -52,7 +52,7 @@ async function SearchTasks(){
     })
 }
 
-// Função que cria os cards na tela, chamada após ter sido enviada para o servidor. 
+// Função que cria os cards na tela, chamada após ter sido enviada para o servidor.
 function CreateCard(_id, title, description, datetask){
     // Div Principal - Recebe os dataSets
   var TaskElement = document.createElement("div");
@@ -75,7 +75,8 @@ function CreateCard(_id, title, description, datetask){
                 <button class="button-icon" id="button-DeletaTask"> <i class="far fa-trash-alt"></i> </button>
             </div>
         </div>
-        <div>
+
+        <div class="section-desc">
             <p>${title}</p>
         </div>
     `;
@@ -89,6 +90,16 @@ function CreateCard(_id, title, description, datetask){
 
   botaovisualizar.addEventListener("click", () => {console.log("abre cont" + TaskElement.dataset.id)});
   botaodeletar.addEventListener("click", () => {DeleteTasks(TaskElement.dataset.id)});
+
+    // Eventos utilizados para enviar dados do card para o conteiner expandido
+  let DivData = document.querySelector(`[data-id="${_id}"] .testing-padding`)
+  DivData.addEventListener('click', TransferData);
+  let DivDesc = document.querySelector(`[data-id="${_id}"] .section-desc`)
+  DivDesc.addEventListener('click', TransferData);
+}
+
+function TransferData(e){
+  console.dir(this.parentNode);
 }
 
 // Está funcionando, pega no padrão americano e converte para PT-BR, usado para os cards
@@ -168,5 +179,7 @@ function OpenMenu(){
   ContainerMenu.style.animationName = "AbrirMenu";
 
 }
+
+
 
 SearchTasks()
