@@ -1,6 +1,6 @@
 const AuthKey = '15:15:15:15:15';
 const endpoint = 'http://192.168.1.3:3333/task'
-var MenuIsOpen = true;
+var MenuIsOpen = false;
 
 // Sempre que uma tarefa for cadastrada, atualizada ou deletada chamar a função de limpar as tarefas do container e chamar novamente o searchTasks.
 // Será utilizada junto com a função vista para atualizar as tasks
@@ -43,7 +43,7 @@ async function CreateTasks(title, description, datetask){
 async function SearchTasks(){
   await CleanCardConteiner()
 
-  var data = '';
+  let data = '';
   data = await fetch(`${endpoint}/filter/all/${AuthKey}`, options = {method: 'GET', mode: 'cors'}).then(response => response.json())
   
   data.map(item => 
@@ -81,8 +81,6 @@ function CreateCard(_id, title, description, datetask){
   let containerCards = document.querySelector(".container-cards");
   containerCards.append(TaskElement);
 
-  console.log(TaskElement)
-
   let botaovisualizar = TaskElement.children[1].children[0];
   let botaodeletar = TaskElement.children[1].children[1];
 
@@ -91,14 +89,28 @@ function CreateCard(_id, title, description, datetask){
 
     // Eventos utilizados para enviar dados do card para o conteiner expandido
   let DivData = document.querySelector(`[data-id="${_id}"] h2`)
-  DivData.addEventListener('click', TransferData);
+  DivData.addEventListener('click', ReceiveDataCard);
   let DivDesc = document.querySelector(`[data-id="${_id}"] .section-desc`)
-  DivDesc.addEventListener('click', TransferData);
+  DivDesc.addEventListener('click', ReceiveDataCard);
 }
 
-// Recebe informações de um evento de clique e passa para o conteiner expandido...
-function TransferData(e){
-  console.log(this.parentNode.dataset);
+//Recebe informações de um evento de clique e passa para o conteiner expandido...
+function ReceiveDataCard(e){
+  datetask = this.parentNode.dataset.datetask
+  title =  this.parentNode.dataset.title
+  id = this.parentNode.dataset.id
+  description = this.parentNode.dataset.description
+
+  ReplaceDataCardExpand(id, title, datetask, description)
+}
+
+// Recebe as informações para adicionar no card expandido Vai ser usada para setar nos h2 e etc, quando clicar no botao oculta esses campos e aparece os inputs usados
+function ReplaceDataCardExpand(id, title, datetask, description){
+  let ExpandCardTitle = document.querySelector("#titulo-header-card");
+  let ExpandCardDesc = document.querySelector(".descricao-tarefa-expandida");
+
+  ExpandCardTitle.innerText = `${title} em ${datetask}`;
+  ExpandCardDesc.value = description;
 }
 
 // Está funcionando, pega no padrão americano e converte para PT-BR, usado para os cards

@@ -274,6 +274,7 @@ body {
   padding: 20px;
 }
 
+
 .div-botoes button i {
   font-size: 2rem;
   color: #fffffe;
@@ -289,7 +290,7 @@ body {
 
 .descricao-tarefa-expandida {
   border: 0;
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 900;
   padding: 10px;
   width: 100%;
