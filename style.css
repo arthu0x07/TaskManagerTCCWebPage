@@ -281,6 +281,74 @@ body {
   padding: 5px;
 }
 
+.header-card-expandido-editmode{
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 10px;
+  border-bottom: 1px solid #333333;
+  box-sizing: border-box;
+  width: 95%;
+  margin-bottom: 5px;
+}
+
+.section1-header-card-editmode{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 20px;
+  box-sizing: border-box;
+  width: 95%;
+  margin-bottom: 5px;
+}
+
+.TitleEditMode{
+  width: 70%;
+  box-sizing: border-box;
+  background-color: rgb(43, 2, 53);
+  color: #fffffe;
+  border: 0;
+  font-weight: 900;
+  padding: 10px;
+  font-size: 2rem;
+  font-family: 'Roboto';
+  height: 40px;
+  font-size: 2rem;
+  margin-right: 1rem;
+  border-radius: 4px;
+}
+
+.TitleEditMode::placeholder{
+  color: #fffffea2;
+  font-style: italic;
+}
+
+.TitleEditMode:focus-visible{
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+.DateEditMode{
+  display: flex;
+  box-sizing: border-box;
+  height: 40px;
+  background-color: rgb(43, 2, 53);
+  border: 0;
+  color: whitesmoke;
+  font-size: 2rem;
+  border-radius: 4px;
+  padding: 20px;
+}
+
+.DateEditMode::placeholder{
+}
+
+.DateEditMode:focus-visible {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+
 .section3-main-card {
   border-radius: 5px;
   box-sizing: border-box;

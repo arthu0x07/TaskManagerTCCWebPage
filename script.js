@@ -108,10 +108,55 @@ function ReceiveDataCard(e){
 function ReplaceDataCardExpand(id, title, datetask, description){
   let ExpandCardTitle = document.querySelector("#titulo-header-card");
   let ExpandCardDesc = document.querySelector(".descricao-tarefa-expandida");
+  let ConteinerCardExp = document.querySelector(".conteiner-card-expandido");
+ 
+  ConteinerCardExp.setAttribute("data-id", id);
+  ConteinerCardExp.setAttribute("data-title", title);
+  ConteinerCardExp.setAttribute("data-datetask", datetask);
+  ConteinerCardExp.setAttribute("data-description", description);
 
-  ExpandCardTitle.innerText = `${title} em ${datetask}`;
+
+  ExpandCardTitle.innerText = `${title} (${datetask})`;
   ExpandCardDesc.value = description;
 }
+
+// Eventos do Header de visualização
+let BotaoCardExpandDeletar = document.querySelector("#button-Deleta");
+let BotaoCardExpandEntrarEditMode = document.querySelector("#button-EntrarEditMode");
+BotaoCardExpandDeletar.addEventListener("click", ExpandCardDeleteTask);
+BotaoCardExpandEntrarEditMode.addEventListener("click", EntrarEditMode);
+
+// Eventos do Header de Edição
+let BotaoCardExpandSalvar = document.querySelector("#button-SalvaTask");
+let BotaoCardExpandSairEditMode = document.querySelector("#button-SairModoEdit");
+BotaoCardExpandSalvar.addEventListener("click", () => {console.log("Salvou Task")});
+BotaoCardExpandSairEditMode.addEventListener("click", SairEditMode);
+
+// Ao Ser chamada, oculta o header principal do card e expoe o de edição
+function EntrarEditMode(){
+  let headerCard = document.querySelector(".header-card-expandido");
+  let headerCardEditMode = document.querySelector(".header-card-expandido-editmode");
+  let textArea = document.querySelector(".descricao-tarefa-expandida");
+
+  headerCard.style.display = "none";
+  headerCardEditMode.style.display = "flex";
+  textArea.removeAttribute('disabled')}
+
+function SairEditMode(){
+  let headerCard = document.querySelector(".header-card-expandido");
+  let headerCardEditMode = document.querySelector(".header-card-expandido-editmode");
+  let textArea = document.querySelector(".descricao-tarefa-expandida");
+
+  headerCardEditMode.style.display = "none";
+  headerCard.style.display = "flex";
+  textArea.disabled = "false";
+}
+
+function ExpandCardDeleteTask(e){
+  console.dir(e);
+}
+
+
 
 // Está funcionando, pega no padrão americano e converte para PT-BR, usado para os cards
 function TaskFormatDateForCard(date){

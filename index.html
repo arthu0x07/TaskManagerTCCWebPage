@@ -43,7 +43,7 @@
         <section class="main-conteiner">
         <div class="container-title"> <h1 class="main-title">Seu ToDoApp para produtividade <span id="notebook-title">📚</span> </h1>  <i class="fas fa-bars botaomenu" id="button-main-relative"></i> </div> 
             <h1 class="main-subtitle">aqui você visualiza... 👀</h1>
-            <div class="conteiner-card-expandido" data-idcardatual="null">
+            <div class="conteiner-card-expandido">
                 <div class="header-card-expandido">
                     <div class="section1-header-card">
                         <h2 id="titulo-header-card">Entregar TCC em 154 dias</h2>
@@ -51,9 +51,23 @@
         
                     <div class="section2-header-card">
                         <div class="div-botoes">
-                            <button class="button-icon" id="button-alteraTask"> <i class="far fa-trash-alt"></i> </button>
-            
-                            <button class="button-icon" id="button-DeletaTask"> <i class="far fa-times-circle" aria-hidden="true"></i> </button>
+                            <button class="button-icon" id="button-Deleta"> <i class="far fa-trash-alt"></i> </button>
+                            <button class="button-icon" id="button-EntrarEditMode"> <i class="far fa-edit" aria-hidden="true"></i> </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-card-expandido-editmode">
+                    <div class="section1-header-card-editmode">
+                        <input type="text" id="InputTitleEdit" class="TitleEditMode" placeholder="Digite seu novo titulo">
+                        <input type="date" name="title" id="InputDateEdit" class="DateEditMode" placeholder="..."/>
+                    </div>
+        
+                    <div class="section2-header-card">
+                        <div class="div-botoes">
+                            <button class="button-icon" id="button-SalvaTask"> <i class="far fa-save"></i> </button>
+                            <button class="button-icon" id="button-SairModoEdit"> <i class="far fa-times-circle" aria-hidden="true"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
