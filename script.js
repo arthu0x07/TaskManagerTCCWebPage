@@ -16,6 +16,7 @@ async function DeleteTasks(id){
   if(isDeleted == true){
     cardTask = document.querySelector(`[data-id="${id}"]`)
     cardTask.remove();
+    return true;
   } else{
     console.log('Não pode ser deletada...');
   }
@@ -85,6 +86,7 @@ function CreateCard(_id, title, description, datetask){
   let botaodeletar = TaskElement.children[1].children[1];
 
   botaovisualizar.addEventListener("click", () => {console.log("abre cont" + TaskElement.dataset.id)});
+
   botaodeletar.addEventListener("click", () => {DeleteTasks(TaskElement.dataset.id)});
 
     // Eventos utilizados para enviar dados do card para o conteiner expandido
@@ -110,7 +112,7 @@ function ReplaceDataCardExpand(id, title, datetask, description){
   let ExpandCardDesc = document.querySelector(".descricao-tarefa-expandida");
   let ConteinerCardExp = document.querySelector(".conteiner-card-expandido");
  
-  ConteinerCardExp.setAttribute("data-id", id);
+  ConteinerCardExp.setAttribute("data-idExpand", id);
   ConteinerCardExp.setAttribute("data-title", title);
   ConteinerCardExp.setAttribute("data-datetask", datetask);
   ConteinerCardExp.setAttribute("data-description", description);
@@ -140,7 +142,8 @@ function EntrarEditMode(){
 
   headerCard.style.display = "none";
   headerCardEditMode.style.display = "flex";
-  textArea.removeAttribute('disabled')}
+  textArea.removeAttribute('disabled')
+}
 
 function SairEditMode(){
   let headerCard = document.querySelector(".header-card-expandido");
@@ -153,9 +156,23 @@ function SairEditMode(){
 }
 
 function ExpandCardDeleteTask(e){
-  console.dir(e);
-}
+  // se a função de deletar retornar 200, resetar os campos, deletar os data-sets
+  IDTask = e.path[5].dataset.idexpand;
+  retorno = DeleteTasks(IDTask);
 
+  if(retorno){
+    document.querySelector("#titulo-header-card").innerText = '';
+    document.querySelector(".descricao-tarefa-expandida").value = '';
+  
+    ConteinerCardExp = document.querySelector(".conteiner-card-expandido");
+    
+    ConteinerCardExp.removeAttribute("data-idExpand");
+    ConteinerCardExp.removeAttribute("data-title");
+    ConteinerCardExp.removeAttribute("data-datetask");
+    ConteinerCardExp.removeAttribute("data-description");
+
+  }
+}
 
 
 // Está funcionando, pega no padrão americano e converte para PT-BR, usado para os cards
