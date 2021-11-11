@@ -4,7 +4,26 @@ var MenuIsOpen = false;
 
 // Sempre que uma tarefa for cadastrada, atualizada ou deletada chamar a função de limpar as tarefas do container e chamar novamente o searchTasks.
 // Será utilizada junto com a função vista para atualizar as tasks
-async function UpdateTasks(){
+async function UpdateTasks(IdTask, NewValueTitle, NewValueDescription, NewValueData){
+  // Criar requisição com estes valores para atualizar... Após a atualização retornar 200 e rebuscar as tasks
+  NewTask = {
+    macadress: AuthKey,
+    title: NewValueTitle,
+    description: NewValueDescription,
+    when: NewValueData
+  }
+
+  response = await fetch(`${endpoint}/${IdTask}`, options = {headers: {'Content-Type': 'application/json'}, mode: 'cors', method: 'PUT', body: JSON.stringify(NewTask)}).then(response => response.json());
+
+  IsFinish = response.status == 200 ? true : false;
+
+  if(IsFinish == true){
+    console.log("Tarefa Atualizada")
+  } else{
+    console.log("Deu ruimm");
+  }
+
+  console.log(response);
 }
 
 // Deleta uma task pelo id, já está vinculada ao evento e está funcionando!
@@ -26,7 +45,6 @@ async function DeleteTasks(id){
 // Cria task, consertado utilizando a função de data.
 async function CreateTasks(title, description, datetask){
   // Vai receber valores do forms...
-  console.log(datetask)
   const task = {
     macadress: AuthKey,
     type: "8",
@@ -131,8 +149,17 @@ BotaoCardExpandEntrarEditMode.addEventListener("click", EntrarEditMode);
 // Eventos do Header de Edição
 let BotaoCardExpandSalvar = document.querySelector("#button-SalvaTask");
 let BotaoCardExpandSairEditMode = document.querySelector("#button-SairModoEdit");
-BotaoCardExpandSalvar.addEventListener("click", () => {console.log("Salvou Task")});
+BotaoCardExpandSalvar.addEventListener("click", SaveTask);
 BotaoCardExpandSairEditMode.addEventListener("click", SairEditMode);
+
+function SaveTask(e){
+  let IdTask = document.querySelector(".conteiner-card-expandido").dataset.idexpand
+  let NewValueTitle = document.querySelector("#InputTitleEdit").value
+  let NewValueData = document.querySelector("#InputDateEdit").value
+  let NewValueDescription = document.querySelector(".descricao-tarefa-expandida").value
+
+  UpdateTasks(IdTask, NewValueTitle, NewValueDescription, TaskFormatDateForCreate(NewValueData));
+}
 
 // Ao Ser chamada, oculta o header principal do card e expoe o de edição
 function EntrarEditMode(){
@@ -173,7 +200,6 @@ function ExpandCardDeleteTask(e){
 
   }
 }
-
 
 // Está funcionando, pega no padrão americano e converte para PT-BR, usado para os cards
 function TaskFormatDateForCard(date){
@@ -250,9 +276,6 @@ function CloseMenu(){
 
 function OpenMenu(){
   ContainerMenu.style.animationName = "AbrirMenu";
-
 }
-
-
 
 SearchTasks()
