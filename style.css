@@ -1,12 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap');
 
 * {
-  margin: 0px;
-  padding: 0px;
-  text-decoration: none;
-  font-family: 'Roboto';
-  color: rgba(245, 245, 245, 0.788);
-  color: #a7a9be;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html {
@@ -16,67 +13,45 @@ html {
 body {
   display: flex;
   justify-content: center;
-  align-items: stretch;
-  padding: 10px 0px;
-  background-color: rgb(32, 1, 40);
+  align-items: center;
+  flex-direction: column;
 }
-
-/* ------------------------------------------------------------------------------------------ */
 
 .menu-create {
   display: flex;
   justify-content: stretch;
   align-items: flex-start;
   flex-direction: column;
-  width: 30%;
-  background-color: rgb(32, 1, 40);
-  padding: 20px;
-  height: 200%;
   box-sizing: border-box;
-  position: absolute;
+  overflow: hidden;
+  height: 100vh;
+  width: 30%;
+  min-width: 280px;
+  background-color: #ffffff;
+  box-shadow: 20px 10px 150px;
+  padding: 10px;
   z-index: 8;
   transform: translateX(0px);
+
+  position: absolute;
+  top: 210vh;
+  left: 0px;
   /* vão receber display none, vão ser dois menus de cada lado da tela, uma para setar os botões de listagem e outro pra criar */
 }
 
 .menu-create h2 {
-  margin-top: 20px;
-  font-size: 3rem;
-  padding: 10px;
-  color: #fffffe;
-  border-radius: 2px 2px 0px 2px;
-  font-family: 'Dancing Script';
-  font-style: normal;
-  width: 80%;
-}
-
-#button-menu-relative {
-  margin: 20px;
-  font-size: 20px;
-}
-
-.menu-create p {
-  font-size: 1.4rem;
-  color: #fffffe;
-  align-self: center;
-  border-radius: 0px 2px 0px 2px;
-  padding: 5px;
-  font-weight: 900;
-  font-family: 'Dancing Script';
-  font-style: normal;
-}
-
-#text-menucreate {
-  margin-top: 30px;
-  width: 90%;
+  width: 100%;
   text-align: center;
-  font-size: 2rem;
-  background-color: rgb(133, 4, 29);
-  border-radius: 20px 10px 43px 9px;
+  font-size: 3rem;
+  font-family: 'Roboto';
+  background-color: #6c63ff;
+  color: #f2f2f2c2;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 .conteiner-forms {
-  margin-top: 50px;
+  margin-top: 15px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -89,27 +64,28 @@ body {
   font-weight: 600;
   color: #fffffe;
   font-family: 'Roboto';
-  background-color: rgb(54, 2, 67);
-  padding: 5px;
-  border-radius: 20px 10px;
+  background-color: #6c63ff;
+  padding: 5px 30px 5px 5px;
+  border-radius: 10px;
 }
 
 .conteiner-forms input {
   width: 100%;
   box-sizing: border-box;
-  height: 40px;
-  margin-bottom: 30px;
+  height: 35px;
+  margin-bottom: 40px;
   margin-top: 5px;
-  background-color: rgb(43, 2, 53);
+  background-color: #333333;
   color: #fffffe;
   border: 0;
   font-weight: 900;
   padding: 10px;
   font-size: 2rem;
   font-family: 'Roboto';
+  border-radius: 10px;
 }
 
-.conteiner-forms input::placeholder{
+.conteiner-forms input::placeholder {
   color: #fffffe57;
 }
 
@@ -119,21 +95,22 @@ body {
 
 #textarea-create {
   width: 280px;
-  height: 30vh;
   width: 100%;
-  margin-bottom: 30px;
+  height: 20vh;
+  margin-bottom: 40px;
   margin-top: 10px;
   box-sizing: border-box;
-  background-color: rgb(43, 2, 53);
   color: #fffffe;
   border: 0;
   font-size: 2rem;
   padding: 5px;
+  background-color: #333333;
   resize: none;
   font-weight: 900;
+  border-radius: 10px;
 }
 
-#textarea-create::placeholder{
+#textarea-create::placeholder {
   color: #fffffe57;
 }
 
@@ -144,15 +121,15 @@ body {
 #date {
   color: #fffffe7a;
   display: flex;
-  height: 40px;
+  height: 30px;
   padding: 5px;
 }
 
 #botaoenviar {
   width: 90%;
   margin: 20px auto;
-  height: auto;
-  background-color: rgb(4, 133, 108);
+  height: 10vh;
+  background-color: #333333;
   border-radius: 10px 23px 15px;
   color: #fffffe;
   border: 0;
@@ -162,72 +139,117 @@ body {
   font-family: 'Dancing Script';
 }
 
-.conteiner-top-menu {
-  display: flex;
+/*     inicio         */
+
+.header-conteiner {
   width: 100%;
-  align-items: baseline;
+  background-color: #6c63ff;
+  min-height: 20vh;
+  display: flex;
   justify-content: space-between;
-}
-
-#button-main-relative {
-  position: relative;
-  left: 3%;
-  margin: 0px 20px;
-  font-size: 20px;
-}
-
-.main-conteiner {
-  padding: 10px;
-  min-height: 50vh;
-  max-height: auto;
-  display: flex;
-  justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
-  width: 60%;
-  flex-grow: 1;
+  padding: 0 2rem;
 }
 
-.container-title{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
+.header-conteiner a {
+  text-decoration: none;
+  padding: 10px 15px;
+  background-color: transparent;
+  border-radius: 22px;
+
+  transition-duration: 1s;
+  transition-property: background-color;
+  transition-timing-function: ease;
 }
 
-.botaomenu{
-  background-color: #fffffe13;
-  padding: 12px;
-  border-radius: 50%;
+.header-conteiner a:hover {
+  background-color: #353535;
 }
 
-.main-title {
-  font-size: 3rem;
-  padding: 10px;
-  width: 60%;
+.title-header {
+  font-size: 4rem;
+  color: #f2f2f2;
+  font-family: 'Playfair Display';
+}
+
+.conteiner-nav-menu {
+  width: 40%;
+}
+
+.conteiner-ul-menu {
   display: flex;
   justify-content: space-evenly;
-  align-items: baseline;
-  border-radius: 5px;
-  color: #fffffe;
-  background-color: rgb(29, 133, 4);
-  font-family: 'Dancing Script';
+  align-items: center;
+  list-style: none;
 }
 
-.main-subtitle {
+.conteiner-li {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display';
+  font-weight: 900;
+}
+
+.conteiner-li a {
+  color: #f2f2f2;
+}
+
+#header-menu-button {
+  font-size: 4rem;
+  color: #353535;
+}
+
+/* -------- MAIN ------------  */
+
+.main-conteiner {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  margin: 20vh 0px;
+  height: 70vh;
+}
+
+.conteiner-main-img {
+  width: 50%;
+  min-width: 280px;
+  align-self: flex-end;
+}
+
+#main-img {
   width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  color: #fffffe;
-  font-family: 'Dancing Script';
-  padding: 8px;
-  border-radius: 2px;
-  font-size: 3rem;
 }
 
-#notebook-title {
-  background-color: transparent;
+.conteiner-main-welcomemsg {
+  width: 50%;
+  align-self: flex-start;
+  transform: rotate(-5deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.conteiner-mgs {
+  text-align: center;
+  min-width: 280px;
+  max-width: 320px;
+  min-height: 24vh;
+  border-radius: 22px;
+  background-color: #6c63ff;
+  padding: 30px 10px;
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  box-shadow: 12px 18px 3px rgba(73, 73, 73, 0.438);
+}
+
+#conteiner-todoapp {
+  display: block;
+}
+
+/* -------- Tasks ------------  */
 
 .conteiner-card-expandido {
   z-index: 5;
@@ -235,14 +257,13 @@ body {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  width: 100%;
-  margin-top: 45px;
+  width: 70%;
   border: 0;
   min-height: 70vh;
-  margin-bottom: 45px;
   border-radius: 5px;
-  background-color: rgb(100, 0, 125);
+  background-color: #6c63ff;
   overflow: hidden;
+  margin-bottom: 5vh;
 }
 
 .header-card-expandido {
@@ -251,7 +272,6 @@ body {
   align-items: center;
   flex-wrap: wrap;
   padding: 10px;
-  border-bottom: 1px solid #333333;
   box-sizing: border-box;
   width: 95%;
   margin-bottom: 5px;
@@ -263,25 +283,15 @@ body {
   align-items: baseline;
   flex-wrap: wrap;
   font-size: 1.5rem;
-
-  width: 70%;
-  min-width: 220px;
+  max-width: 60%;
 }
 
 .section1-header-card h2 {
   border-radius: 5px;
   color: #fffffe;
-  padding: 20px;
 }
 
-
-.div-botoes button i {
-  font-size: 2rem;
-  color: #fffffe;
-  padding: 5px;
-}
-
-.header-card-expandido-editmode{
+.header-card-expandido-editmode {
   display: none;
   justify-content: space-between;
   align-items: center;
@@ -293,7 +303,7 @@ body {
   margin-bottom: 5px;
 }
 
-.section1-header-card-editmode{
+.section1-header-card-editmode {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -304,7 +314,7 @@ body {
   margin-bottom: 5px;
 }
 
-.TitleEditMode{
+.TitleEditMode {
   width: 70%;
   box-sizing: border-box;
   background-color: rgb(43, 2, 53);
@@ -320,16 +330,16 @@ body {
   border-radius: 4px;
 }
 
-.TitleEditMode::placeholder{
+.TitleEditMode::placeholder {
   color: #fffffea2;
   font-style: italic;
 }
 
-.TitleEditMode:focus-visible{
+.TitleEditMode:focus-visible {
   outline: -webkit-focus-ring-color auto 0px;
 }
 
-.DateEditMode{
+.DateEditMode {
   display: flex;
   box-sizing: border-box;
   height: 40px;
@@ -341,13 +351,12 @@ body {
   padding: 20px;
 }
 
-.DateEditMode::placeholder{
+.DateEditMode::placeholder {
 }
 
 .DateEditMode:focus-visible {
   outline: -webkit-focus-ring-color auto 0px;
 }
-
 
 .section3-main-card {
   border-radius: 5px;
@@ -366,38 +375,48 @@ body {
   box-sizing: border-box;
   color: #fffffe;
   resize: none;
-  background-color: rgb(100, 0, 125);
+  background-color: #6e67f7;
 }
 
 .descricao-tarefa-expandida::placeholder {
   font-size: 2rem;
   font-style: italic;
   font-weight: 900;
+  color: #f2f2f2;
 }
 
 .descricao-tarefa-expandida:focus-visible {
   outline: -webkit-focus-ring-color auto 0px;
 }
 
-/* ---------------- */
+/* /////-------- Cards ------------  */
 
-.conteiner-geral {
-  display: flex;
+.container-cards-general {
+  margin-top: 8vh;
+  width: 100%;
+  min-height: 40vh;
+}
+
+.conteiners-cards-mark {
+  color: #414141;
+  padding: 10px;
+  width: 10%;
+  text-align: center;
+  margin: 0px 0px 0px 1rem;
+  border-radius: 10px;
+  font-size: 3rem;
+  font-style: italic;
 }
 
 .container-cards {
-  min-height: 20vh;
-  height: auto;
-  flex-basis: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: wrap;
+  overflow-x: scroll;
 }
 
 .cards {
-  min-width: 320px;
-  width: 30%;
+  min-width: 280px;
+  height: 200px;
+
   margin: 10px;
   flex-grow: 1;
   font-weight: 900;
@@ -405,46 +424,57 @@ body {
   border-radius: 5px;
   padding: 10px;
   box-sizing: border-box;
-
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  background-color: rgb(100, 0, 125);
+  background-color: #6c63ff;
 }
 
 .cards h2 {
-  /* Altera todos os H2 da classe card, mesmo que não seja filhos diretos */
-  border-radius: 5px;
-  padding: 5px;
-  background-color: #0f0e17e7;
   font-size: 2rem;
-  color: #a7a9be;
+  color: #f2f2f2;
+  background-color: #ffffff11;
   width: 50%;
-  flex-shrink: 2;
+  padding: 10px;
+  border-radius: 22px;
 }
 
-.section-desc{
-  width: 100%;
-  margin-top: 7px;
-  border-radius: 5px;
-  margin-top: 7px;
-  padding: 8px;
-  font-size: 2rem;
-  background-color: #0f0e17e7;
-}
-
-.div-botoes{
+#divbotoes-data {
   display: flex;
-  justify-content: flex-end;
-  min-width: 20%;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.testing-padding {
+  width: 60%;
+  background-color: #ffffff09;
+  color: #f2f2f2;
+  border-radius: 5px;
+  font-size: 1.5rem;
+  padding: 4px;
+}
+
+.testing-padding h2 {
+}
+
+.div-botoes {
 }
 
 .div-botoes button {
   background-color: transparent;
   border-style: none;
   font-size: 2rem;
+  margin: 0px 10px;
+}
+
+.div-botoes button i {
+  font-size: 2rem;
+  background-color: #ffffff38;
+  color: #f2f2f2;
+  padding: 5px;
 }
 
 .button-icon {
@@ -455,109 +485,65 @@ body {
   box-sizing: border-box;
   padding: 4px;
   background-color: #0f0e17a4;
-  margin: 0px 4px;
   border-radius: 5px;
   font-size: 10px;
 }
 
-#green {
-  background-color: #046313;
-}
-#blue {
-  background-color: #044a7d;
-}
-#yellow {
-  background-color: #725200;
+.section-desc {
+  width: 100%;
+  height: 50%;
+  border-radius: 5px;
+  font-size: 2rem;
+  padding: 10px;
+  background-color: #ffffff09;
+  color: #f2f2f2;
+  overflow: hidden;
 }
 
-@media (min-width: 768px) {
-  #button-menu-relative {
-    display: none;
-    position: relative;
-    left: 3%;
-    margin: 0px 20px;
-    font-size: 20px;
+@media (max-width: 700px) {
+  html {
+    font-size: 50%;
   }
-}
 
-@media (max-width: 1073px) {
-  .imagemEtxts {
+  .main-conteiner {
     flex-direction: column;
-    text-align: center;
-    margin-top: 5px;
-    padding: 0px;
-  }
-
-  .txts {
-    text-align: center;
-    margin: 0px;
-  }
-
-  .botãoEdit {
-    min-height: 0vh;
-    min-width: 0;
-
     justify-content: center;
-    padding: 3px;
+    align-items: center;
+    margin-top: 12vh;
   }
 
-  .txts h2 {
-    position: static;
-  }
-
-  .txts p {
-    position: static;
-  }
-
-  .cards {
-    flex-basis: 20%;
-    margin: 30px;
-  }
-}
-
-@media (max-width: 1024px) {
-  .main-conteiner {
+  .conteiner-main-img {
     width: 60%;
+    min-width: 280px;
+    align-self: center;
+    margin-top: 10vh;
+    order: 2;
+  }
+
+  .conteiner-main-welcomemsg {
+    width: 90%;
+    align-self: center;
+    transform: rotate(0deg);
+    order: 1;
   }
 
   .menu-create {
-    width: 40%;
+    width: 100%;
   }
 }
 
-@media (max-width: 768px) {
-  .main-conteiner {
-    width: 100%;
+@media (max-width: 560px) {
+  /* Entra menu responsivo */
+
+  .conteiner-nav-menu {
+    display: none;
   }
 
-  .menu-create {
-    position: absolute;
-    z-index: 6;
-    width: 100%;
-    height: auto;
-    border-radius: 0 0 40px 40px;
-    box-shadow: 0px 20px 30px black;
-  }
-
-  #button-menu-relative {
+  #header-menu-button {
     display: initial;
-    position: relative;
-    left: 0%;
-  }
-}
-
-@media (max-width: 890px) {
-  html {
-    font-size: 55%;
-  }
-}
-
-@media (max-width: 500px) {
-  html {
-    font-size: 45%;
   }
 
-  .cards {
-    min-width: 190px;
+  .conteiner-card-expandido {
+    width: 98%;
   }
 }

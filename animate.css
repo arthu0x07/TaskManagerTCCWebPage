@@ -3,9 +3,8 @@
 }
 
 .menu-create {
-  position: absolute !important;
   z-index: 8;
-  transform: translateX(-100%);
+  transform: translateX(-120%);
 
   animation-name: x;
   animation-duration: 2s;
@@ -14,22 +13,22 @@
   animation-timing-function: ease;
 }
 
-@keyframes FecharMenu{
-  from{
+@keyframes FecharMenu {
+  from {
     transform: translateX(0px);
   }
 
-  to{
-    transform: translateX(-100%);
+  to {
+    transform: translateX(-120%);
   }
 }
 
-@keyframes AbrirMenu{
-  from{
-    transform: translateX(-100%);
+@keyframes AbrirMenu {
+  from {
+    transform: translateX(-120%);
   }
 
-  to{
+  to {
     transform: translateX(0px);
   }
 }

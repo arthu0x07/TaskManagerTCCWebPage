@@ -1,105 +1,297 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Dongle:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Indie+Flower&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="animate.css">
-    <link rel="shortcut icon" href="imgs/homework.png" type="image/x-icon">
-    <title>YourToDoApp</title>
-</head>
-<body>
-    <main class="conteiner-geral">
-        <section class="menu-create">
-            
-            <div class="conteiner-top-menu">
-                <h2>aqui você cria... ✔️</h2>
-                <i class="fas fa-times-circle botaomenu" id="button-menu-relative"></i>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animate.css" />
+    <link rel="shortcut icon" href="assets/homework.png" type="image/x-icon">
+    <title>YourTodoApp</title>
+  </head>
+  <body>
+    <section class="menu-create">
+      <h2>create your tasks</h2>
 
-            <p id="text-menucreate">Crie em apenas 4 passos ⚡</p>
+      <form action="#" class="conteiner-forms">
+        <label for="title" class="labels-input">title</label>
+        <input
+          type="text"
+          name="title"
+          id="title"
+          placeholder="como identificar sem um titulo?"
+        />
 
+        <label for="textarea-create" class="labels-input">description</label>
+        <textarea
+          name="desc"
+          id="textarea-create"
+          placeholder="não da para lembrar o que fazer sem anotar né"
+        ></textarea>
 
-            <form action="#" class="conteiner-forms">
-                <label for="title" class="labels-input">❔</label>
-                <input type="text" name="title" id="title" placeholder="como identificar sem um titulo?">
+        <label for="date" class="labels-input">date</label>
+        <input type="date" name="title" id="date" placeholder="..." />
 
-                <label for="textarea-create" class="labels-input">✏️</label>
-                <textarea name="desc" id="textarea-create" placeholder="não da para lembrar o que fazer sem anotar né"></textarea>
+        <input
+          type="submit"
+          name="cadastrar"
+          id="botaoenviar"
+          value="cadastre ✅"
+        />
+      </form>
+    </section>
 
-                <label for="date" class="labels-input">📆</label>
-                <input type="date" name="title" id="date" placeholder="..."/>
-                
-                <input type="submit" name="cadastrar" id="botaoenviar" value="cadastre ✅">
-            </form>
-        </section>
+    <header class="header-conteiner">
+      <a href="index.html">
+        <h2 class="title-header">YourTodoApp</h2>
+      </a>
 
-        <section class="main-conteiner">
-        <div class="container-title"> <h1 class="main-title">Seu ToDoApp para produtividade <span id="notebook-title">📚</span> </h1>  <i class="fas fa-bars botaomenu" id="button-main-relative"></i> </div> 
-            <h1 class="main-subtitle">aqui você visualiza... 👀</h1>
-            <div class="conteiner-card-expandido">
-                <div class="header-card-expandido">
-                    <div class="section1-header-card">
-                        <h2 id="titulo-header-card">Titulos</h2>
-                    </div>
-        
-                    <div class="section2-header-card">
-                        <div class="div-botoes">
-                            <button class="button-icon" id="button-Deleta"> <i class="far fa-trash-alt"></i> </button>
-                            <button class="button-icon" id="button-EntrarEditMode"> <i class="far fa-edit" aria-hidden="true"></i> </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="header-card-expandido-editmode">
-                    <div class="section1-header-card-editmode">
-                        <input type="text" id="InputTitleEdit" class="TitleEditMode" placeholder="Digite seu novo titulo">
-                        <input type="date" name="title" id="InputDateEdit" class="DateEditMode" placeholder="..."/>
-                    </div>
-        
-                    <div class="section2-header-card">
-                        <div class="div-botoes">
-                            <button class="button-icon" id="button-SalvaTask"> <i class="far fa-save"></i> </button>
-                            <button class="button-icon" id="button-SairModoEdit"> <i class="far fa-times-circle" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="section3-main-card">
-                    <textarea class="descricao-tarefa-expandida" placeholder="aqui ficara sua descrição" disabled></textarea>
-                </div>
-            </div>
+      <nav class="conteiner-nav-menu">
+        <ul class="conteiner-ul-menu">
+          <li class="conteiner-li"><a href="#...">app</a></li>
+          <li class="conteiner-li"><a href="#...">sobre</a></li>
+          <li class="conteiner-li"><a href="#...">contato</a></li>
+        </ul>
+      </nav>
+    </header>
 
-            <div class="container-cards">
-                <!-- Cards vem aqui -->
-                <div class="cards" data-id="" data-title="" data-description="" data-datetask="">
-                    <div>
-                        <div class="testing-padding">
-                            <h2>15 dias</h2>
-                        </div>
-              
-                        <div class="div-botoes">
-                            <button class="button-icon" id="button-visualizaTask"> <i class="far fa-eye"></i> </button>
-              
-                            <button class="button-icon" id="button-DeletaTask"> <i class="far fa-trash-alt"></i> </button>
-                        </div>
-                    </div>
-              
-                    <div class="section-desc">
-                        <p>descrição</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <main class="main-conteiner">
+      <div class="conteiner-main-img">
+        <img src="assets/img/firstimage.png" alt="Person" id="main-img" />
+      </div>
+
+      <div class="conteiner-main-welcomemsg">
+        <div class="conteiner-mgs">
+          <h2>Welcome to</h2>
+          <span id="conteiner-todoapp">/TodoApp</span>
+        </div>
+      </div>
     </main>
-    <script src="https://kit.fontawesome.com/96fdea3235.js" crossorigin="anonymous"></script>
+
+    <section class="conteiner-card-expandido">
+      <div class="header-card-expandido">
+        <div class="section1-header-card">
+          <h2 id="titulo-header-card">Titulos</h2>
+        </div>
+
+        <div class="section2-header-card">
+          <div class="div-botoes">
+            <button class="button-icon" id="button-Deleta">
+              <i class="far fa-trash-alt"></i>
+            </button>
+            <button class="button-icon" id="button-EntrarEditMode">
+              <i class="far fa-edit" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="header-card-expandido-editmode">
+        <div class="section1-header-card-editmode">
+          <input
+            type="text"
+            id="InputTitleEdit"
+            class="TitleEditMode"
+            placeholder="Digite seu novo titulo"
+          />
+          <input
+            type="date"
+            name="title"
+            id="InputDateEdit"
+            class="DateEditMode"
+            placeholder="..."
+          />
+        </div>
+
+        <div class="section2-header-card">
+          <div class="div-botoes">
+            <button class="button-icon" id="button-SalvaTask">
+              <i class="far fa-save"></i>
+            </button>
+            <button class="button-icon" id="button-SairModoEdit">
+              <i class="far fa-times-circle" aria-hidden="true"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="section3-main-card">
+        <textarea
+          class="descricao-tarefa-expandida"
+          placeholder="aqui ficara sua descrição"
+          disabled
+        ></textarea>
+      </div>
+    </section>
+    <i class="fas fa-plus-square" id="header-menu-button"></i>
+
+    <section class="container-cards-general container-cards-general-late">
+      <h2 class="conteiners-cards-mark">Late</h2>
+      <div class="container-cards">
+        <!-- Cards vem aqui -->
+        <div
+          class="cards"
+          data-id=""
+          data-title=""
+          data-description=""
+          data-datetask=""
+        >
+          <div id="divbotoes-data">
+            <div class="testing-padding">
+              <h2>11/11/2021</h2>
+            </div>
+
+            <div class="div-botoes">
+              <button class="button-icon" id="button-visualizaTask">
+                <i class="far fa-eye"></i>
+              </button>
+
+              <button class="button-icon" id="button-DeletaTask">
+                <i class="far fa-trash-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="section-desc">
+            <p>
+              descriçãdescriçãdescriçãdescriçã color: #a7a9be; color: color:
+              #a7a9be; color: #a7a9be; color: #a7a9be; color: #a7a9be; color:
+              #a7a9be; color: #a7a9be; color: #a7a9be; color: #a7a9be; #a7a9be;
+              color: #a7a9be; color: #a7a9be; o
+            </p>
+          </div>
+        </div>
+        <div
+          class="cards"
+          data-id=""
+          data-title=""
+          data-description=""
+          data-datetask=""
+        >
+          <div id="divbotoes-data">
+            <div class="testing-padding">
+              <h2>11/11/2021</h2>
+            </div>
+
+            <div class="div-botoes">
+              <button class="button-icon" id="button-visualizaTask">
+                <i class="far fa-eye"></i>
+              </button>
+
+              <button class="button-icon" id="button-DeletaTask">
+                <i class="far fa-trash-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="section-desc">
+            <p>
+              descriçãdescriçãdescriçãdescriçã color: #a7a9be; color: color:
+              #a7a9be; color: #a7a9be; color: #a7a9be; color: #a7a9be; color:
+              #a7a9be; color: #a7a9be; color: #a7a9be; color: #a7a9be; #a7a9be;
+              color: #a7a9be; color: #a7a9be; o
+            </p>
+          </div>
+        </div>
+        <div
+          class="cards"
+          data-id=""
+          data-title=""
+          data-description=""
+          data-datetask=""
+        >
+          <div id="divbotoes-data">
+            <div class="testing-padding">
+              <h2>11/11/2021</h2>
+            </div>
+
+            <div class="div-botoes">
+              <button class="button-icon" id="button-visualizaTask">
+                <i class="far fa-eye"></i>
+              </button>
+
+              <button class="button-icon" id="button-DeletaTask">
+                <i class="far fa-trash-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="section-desc">
+            <p>
+              descriçãdescriçãdescriçãdescriçã color: #a7a9be; color: color:
+              #a7a9be; color: #a7a9be; color: #a7a9be; color: #a7a9be; color:
+              #a7a9be; color: #a7a9be; color: #a7a9be; color: #a7a9be; #a7a9be;
+              color: #a7a9be; color: #a7a9be; o
+            </p>
+          </div>
+        </div>
+        <div
+          class="cards"
+          data-id=""
+          data-title=""
+          data-description=""
+          data-datetask=""
+        >
+          <div id="divbotoes-data">
+            <div class="testing-padding">
+              <h2>11/11/2021</h2>
+            </div>
+
+            <div class="div-botoes">
+              <button class="button-icon" id="button-visualizaTask">
+                <i class="far fa-eye"></i>
+              </button>
+
+              <button class="button-icon" id="button-DeletaTask">
+                <i class="far fa-trash-alt"></i>
+              </button>
+            </div>
+          </div>
+
+          <div class="section-desc">
+            <p>
+              descriçãdescriçãdescriçãdescriçã color: #a7a9be; color: color:
+              #a7a9be; color: #a7a9be; color: #a7a9be; color: #a7a9be; color:
+              #a7a9be; color: #a7a9be; color: #a7a9be; color: #a7a9be; #a7a9be;
+              color: #a7a9be; color: #a7a9be; o
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-cards-general container-cards-general-today">
+      <h2 class="conteiners-cards-mark">Today</h2>
+      <div class="container-cards">
+        <!-- Cards vem aqui -->
+      </div>
+    </section>
+
+    <section class="container-cards-general container-cards-general-week">
+      <h2 class="conteiners-cards-mark">Week</h2>
+      <div class="container-cards">
+        <!-- Cards vem aqui -->
+      </div>
+    </section>
+
+    <section class="container-cards-general container-cards-general-month">
+      <h2 class="conteiners-cards-mark">Month</h2>
+      <div class="container-cards">
+        <!-- Cards vem aqui -->
+      </div>
+    </section>
+
+    <section class="container-cards-general container-cards-general-year">
+      <h2 class="conteiners-cards-mark">Year</h2>
+      <div class="container-cards">
+        <!-- Cards vem aqui -->
+      </div>
+    </section>
+
     <script src="script.js"></script>
-</body>
+    <script
+      src="https://kit.fontawesome.com/96fdea3235.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

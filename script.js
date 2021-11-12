@@ -252,9 +252,8 @@ function CleanFormValues(e){
 }
 
 ContainerMenu = document.querySelector(".menu-create");
-ButtonMenu = document.querySelectorAll(".botaomenu");
-ButtonMenu[0].addEventListener('click', StartMenu)
-ButtonMenu[1].addEventListener('click', StartMenu)
+ButtonMenu = document.querySelector("#header-menu-button");
+ButtonMenu.addEventListener('click', StartMenu)
 
 function StartMenu(){
   console.log("click")
