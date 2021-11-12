@@ -24,8 +24,9 @@ body {
   flex-direction: column;
   box-sizing: border-box;
   overflow: hidden;
-  height: 100vh;
-  width: 30%;
+  height: auto;
+  border-radius: 10px;
+  width: 50%;
   min-width: 280px;
   background-color: #ffffff;
   box-shadow: 20px 10px 150px;
@@ -34,7 +35,7 @@ body {
   transform: translateX(0px);
 
   position: absolute;
-  top: 210vh;
+  top: 215vh;
   left: 0px;
   /* vão receber display none, vão ser dois menus de cada lado da tela, uma para setar os botões de listagem e outro pra criar */
 }

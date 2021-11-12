@@ -34,7 +34,8 @@ async function DeleteTasks(id){
 
   if(isDeleted == true){
     cardTask = document.querySelector(`[data-id="${id}"]`)
-    cardTask.remove();
+    SearchTasks()
+    console.log("Deletou")
     return true;
   } else{
     console.log('Não pode ser deletada...');
@@ -60,19 +61,44 @@ async function CreateTasks(title, description, datetask){
 
 //Solicita para o servidor as tasks e renderiza usando a função vista.
 async function SearchTasks(){
-  await CleanCardConteiner()
+  CleanCardConteiner()
 
-  let data = '';
-  data = await fetch(`${endpoint}/filter/all/${AuthKey}`, options = {method: 'GET', mode: 'cors'}).then(response => response.json())
-  
-  data.map(item => 
+  let dataall = '';
+  dataall = await fetch(`${endpoint}/filter/all/${AuthKey}`, options = {method: 'GET', mode: 'cors'}).then(response => response.json())
+  dataall.map(item => 
     {
-      CreateCard(item._id, item.title, item.description, TaskFormatDateForCard(item.when))
+      CreateCard(item._id, item.title, item.description, TaskFormatDateForCard(item.when), 'all')
     })
+
+
+  datalate = await fetch(`${endpoint}/filter/late/${AuthKey}`, options = {method: 'GET', mode: 'cors'}).then(response => response.json())
+  datalate.map(item => 
+    {
+      CreateCard(item._id, item.title, item.description, TaskFormatDateForCard(item.when), 'late')
+    })
+
+  datatoday = await fetch(`${endpoint}/filter/today/${AuthKey}`, options = {method: 'GET', mode: 'cors'}).then(response => response.json())
+  datatoday.map(item => 
+    {
+      CreateCard(item._id, item.title, item.description, TaskFormatDateForCard(item.when), 'today')
+    })
+
+  dataweek = await fetch(`${endpoint}/filter/week/${AuthKey}`, options = {method: 'GET', mode: 'cors'}).then(response => response.json())
+  dataweek.map(item => 
+    {
+      CreateCard(item._id, item.title, item.description, TaskFormatDateForCard(item.when), 'week')
+    })
+
+  datamonth = await fetch(`${endpoint}/filter/month/${AuthKey}`, options = {method: 'GET', mode: 'cors'}).then(response => response.json())
+  datamonth.map(item => 
+    {
+      CreateCard(item._id, item.title, item.description, TaskFormatDateForCard(item.when), 'month')
+    })
+
 }
 
 // Função que cria os cards na tela, chamada após ter sido enviada para o servidor.
-function CreateCard(_id, title, description, datetask){
+function CreateCard(_id, title, description, datetask, status){
     // Div Principal - Recebe os dataSets
   var TaskElement = document.createElement("div");
   
@@ -97,29 +123,76 @@ function CreateCard(_id, title, description, datetask){
     `;
 
     //Renderiza no conteiner definido.
-  let containerCards = document.querySelector(".container-cards");
-  containerCards.append(TaskElement);
+    if(status == 'late'){
+      let containerCards = document.querySelector(".container-cards-general-late .container-cards");
+      containerCards.append(TaskElement);
+    
+    } else
+
+    if(status == 'all'){
+      let containerCards = document.querySelector(".container-cards-general-all .container-cards");
+      containerCards.append(TaskElement);
+  
+    } else
+
+    if(status == 'today'){
+      let containerCards = document.querySelector(".container-cards-general-today .container-cards");
+      containerCards.append(TaskElement);
+  
+    } else
+
+    if(status == 'week'){
+      let containerCards = document.querySelector(".container-cards-general-week .container-cards");
+      containerCards.append(TaskElement);
+  
+    } else
+
+    if(status == 'month'){
+      let containerCards = document.querySelector(".container-cards-general-month .container-cards");
+      containerCards.append(TaskElement);
+    }
+
 
   let botaovisualizar = TaskElement.children[1].children[0];
   let botaodeletar = TaskElement.children[1].children[1];
 
-  botaovisualizar.addEventListener("click", () => {console.log("abre cont" + TaskElement.dataset.id)});
-
+  botaovisualizar.addEventListener("click", ReceiveDataCard);
   botaodeletar.addEventListener("click", () => {DeleteTasks(TaskElement.dataset.id)});
 
-    // Eventos utilizados para enviar dados do card para o conteiner expandido
-  let DivData = document.querySelector(`[data-id="${_id}"] h2`)
-  DivData.addEventListener('click', ReceiveDataCard);
-  let DivDesc = document.querySelector(`[data-id="${_id}"] .section-desc`)
-  DivDesc.addEventListener('click', ReceiveDataCard);
+    // Eventos utilizados para enviar dados do card para o conteiner expandido // Errps aqui
+  let DivData = document.querySelectorAll(`[data-id="${_id}"] h2`)
+  let DivDesc = document.querySelectorAll(`[data-id="${_id}"] .section-desc`)
+
+  for(let x = 0; x != DivData.length; x++){
+    DivData[x].addEventListener('click', ReceiveDataCard);
+  }
+
+  for(let z = 0; z != DivData.length; z++){
+    DivDesc[z].addEventListener('click', ReceiveDataCard);
+  }
+
 }
 
-//Recebe informações de um evento de clique e passa para o conteiner expandido...
+//Recebe informações de um evento de clique e passa para o conteiner expandido... Botoes de visualização consertados
 function ReceiveDataCard(e){
-  datetask = this.parentNode.dataset.datetask
-  title =  this.parentNode.dataset.title
-  id = this.parentNode.dataset.id
-  description = this.parentNode.dataset.description
+  if(this.parentNode.className == 'cards'){
+    console.log("duvcard")
+    datetask = this.parentNode.dataset.datetask
+    title =  this.parentNode.dataset.title
+    id = this.parentNode.dataset.id
+    description = this.parentNode.dataset.description  
+  }
+  
+  else
+  
+  if(this.parentNode.className == 'div-botoes'){
+    console.log("duvcardsadasdasd")
+
+    datetask = this.parentNode.parentNode.dataset.datetask
+    title =  this.parentNode.parentNode.dataset.title
+    id = this.parentNode.parentNode.dataset.id
+    description = this.parentNode.parentNode.dataset.description
+  }
 
   ReplaceDataCardExpand(id, title, datetask, description)
 }
@@ -225,8 +298,13 @@ function AtualizaCard(_id, novosvaloresetc){
 
 // Limpa o conteiner de cards, vai ser usado para resetar e renderizar novamente com os filtros
 function CleanCardConteiner(){
-  let containerCards = document.querySelector(".container-cards");
-  containerCards.innerHTML = "";
+  let containerCards = document.querySelectorAll(".container-cards");
+  
+  containerCards[0].innerHTML = "";
+  containerCards[1].innerHTML = "";
+  containerCards[2].innerHTML = "";
+  containerCards[3].innerHTML = "";
+  containerCards[4].innerHTML = "";
 }
 
 // Adiciona eventos no forms, retem os valores, e envia para a função de criar tarefas no banco.
