@@ -96,6 +96,7 @@ async function SearchTasks(){
     })
 
   CleanFormEditmode();
+  CleanFormViewMode();
 }
 
 // Função que cria os cards na tela, chamada após ter sido enviada para o servidor.
@@ -243,6 +244,15 @@ function CleanFormEditmode(){
   ConteinerDataSet.removeAttribute("data-datetask");
 }
 
+// Limpa os campos do viewmode...
+function CleanFormViewMode(){
+  TituloHeaderCard = document.querySelector("#titulo-header-card");
+  TituloHeaderCard.innerText = 'Seu titulo';
+
+  DescricaoTarefaExpandida = document.querySelector(".descricao-tarefa-expandida");
+  DescricaoTarefaExpandida.value = '';
+}
+
 function SaveTask(e){
   let IdTask = document.querySelector(".conteiner-card-expandido").dataset.idexpand
   let NewValueTitle = document.querySelector("#InputTitleEdit").value
@@ -265,6 +275,7 @@ function EntrarEditMode(){
 
 function SairEditMode(){
   CleanFormEditmode();
+  CleanFormViewMode();
 
   let headerCard = document.querySelector(".header-card-expandido");
   let headerCardEditMode = document.querySelector(".header-card-expandido-editmode");
