@@ -35,6 +35,24 @@ function feedback(iconname, title, description){
 // Será utilizada junto com a função vista para atualizar as tasks
 async function UpdateTasks(IdTask, NewValueTitle, NewValueDescription, NewValueData){
   // Criar requisição com estes valores para atualizar... Após a atualização retornar 200 e rebuscar as tasks
+
+  console.log(IdTask);
+  
+  if(IdTask == undefined && NewValueTitle != '' && NewValueDescription != '' && NewValueData != ''){
+    feedback('error', "No Task", "your trying update without selecting a task")
+    return undefined;
+
+  } else 
+  
+  if(IdTask != '' && NewValueTitle != '' && NewValueDescription != '' && NewValueData != ''){
+    feedback('check', "Task Updated", "your task has been updated")
+
+  } else{
+    feedback('error', "Empty Field", "don't leave empty fields")
+    return undefined;
+  }
+  
+  
   NewTask = {
     macadress: AuthKey,
     title: NewValueTitle,
@@ -45,15 +63,6 @@ async function UpdateTasks(IdTask, NewValueTitle, NewValueDescription, NewValueD
   response = await fetch(`${endpoint}/${IdTask}`, options = {headers: {'Content-Type': 'application/json'}, mode: 'cors', method: 'PUT', body: JSON.stringify(NewTask)}).then(response => {return response.json()});
   console.log(response._id);
 
-
-  if(response._id == undefined){
-    feedback("error", 'Task not updated', 'Your task has not updated');
-
-  } else{
-    feedback("check", 'Task Updated', 'Your task has been updated');
-  
-  }
-
   SearchTasks();
 }
 
@@ -61,21 +70,39 @@ async function UpdateTasks(IdTask, NewValueTitle, NewValueDescription, NewValueD
 async function DeleteTasks(id){
   // Chamada por um evento nos botões...
   // Vai mandar uma requisição para deletar, e em seguida vai apagar o conteiner com esse id. Deletamos com o element.remove();
-  await fetch(`${endpoint}/${id}`, options = {method: 'DELETE', mode: 'cors'}).then(res => {isDeleted = res.status == 200 ? true : false });
+  // fazer a comparação antes da requisição
 
-  if(isDeleted == true){
-    cardTask = document.querySelector(`[data-id="${id}"]`)
-    SearchTasks()
-    console.log("Deletou")
-    return true;
-  } else{
-    console.log('Não pode ser deletada...');
+  console.log(id);
+
+  if(id == undefined){
+    feedback('error', "No Task", "you are trying to delete without selecting a task");
+
+    return undefined;
   }
-  
+
+  response = await fetch(`${endpoint}/${id}`, options = {method: 'DELETE', mode: 'cors'}).then(response => {return response.json()});
+  console.log(response);
+
+  if(response == null){
+    feedback('error', "Empty Field", "don't leave empty fields");
+    return undefined;
+
+  } else{
+    feedback("check", 'Task Deleted', 'Your task has been deleted');
+    SearchTasks();
+  }
 }
 
 // Cria task, consertado utilizando a função de data.
 async function CreateTasks(title, description, datetask){
+  if(title != '' && description != '' && datetask != ''){
+    feedback('check', "Created Task", "your task has been created")
+
+  } else{
+    feedback('error', "Empty Tasks", "don't create empty tasks")
+    return undefined;
+  }
+
   // Vai receber valores do forms...
   const task = {
     macadress: AuthKey,
