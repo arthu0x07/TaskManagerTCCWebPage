@@ -17,6 +17,55 @@ body {
   flex-direction: column;
 }
 
+.conteiner-erro-msg{
+  width: 30%;
+  min-height: 50vh;
+  background-color: #6c63ff;
+  border-radius: 15px;
+  box-shadow: 20px 0px 20px #353535;
+  border: 2px solid whitesmoke;
+
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+
+  position: absolute;
+  top: 240vh;
+}
+
+.conteiner-icon{
+}
+
+.conteiner-icon i{
+  font-size: 7rem;
+  color: whitesmoke;
+}
+
+.title-mensage{
+  font-size: 4rem;
+  color: whitesmoke;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.description-mensage{
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 900;
+  color: rgb(59, 59, 59);
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.confirm-mensage{
+  padding: 10px;
+  border-radius: 5px;
+  border: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgb(77, 77, 77);
+}
+
 .menu-create {
   display: flex;
   justify-content: stretch;

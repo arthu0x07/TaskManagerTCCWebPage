@@ -2,6 +2,35 @@ const AuthKey = '15:15:15:15:15';
 const endpoint = 'http://192.168.1.3:3333/task'
 var MenuIsOpen = false;
 
+function feedback(iconname, title, description){
+  conteinerMsg = document.querySelector(".conteiner-erro-msg");
+  conteinerIcon = document.querySelector(".conteiner-icon");
+
+  conteinerIcon.innerHTML = '';
+
+  iconmsgCheck = document.createElement("i");
+  iconmsgCheck.setAttribute('class', 'fas fa-check-circle');
+
+  iconmsgErr = document.createElement("i");
+  iconmsgErr.setAttribute('class', 'fas fa-exclamation-circle');
+
+  MsgTitle = document.querySelector(".title-mensage");
+  MsgTitle.innerText = title;
+  MsgDescription = document.querySelector(".description-mensage");
+  MsgDescription.innerText = description;
+
+
+  if(iconname == 'check'){
+    conteinerIcon.append(iconmsgCheck);
+  } else
+
+  if(iconname == 'error'){
+    conteinerIcon.append(iconmsgErr);
+  }
+
+
+}
+
 // Sempre que uma tarefa for cadastrada, atualizada ou deletada chamar a função de limpar as tarefas do container e chamar novamente o searchTasks.
 // Será utilizada junto com a função vista para atualizar as tasks
 async function UpdateTasks(IdTask, NewValueTitle, NewValueDescription, NewValueData){
@@ -13,14 +42,16 @@ async function UpdateTasks(IdTask, NewValueTitle, NewValueDescription, NewValueD
     when: NewValueData
   }
 
-  response = await fetch(`${endpoint}/${IdTask}`, options = {headers: {'Content-Type': 'application/json'}, mode: 'cors', method: 'PUT', body: JSON.stringify(NewTask)}).then(response => response.json());
+  response = await fetch(`${endpoint}/${IdTask}`, options = {headers: {'Content-Type': 'application/json'}, mode: 'cors', method: 'PUT', body: JSON.stringify(NewTask)}).then(response => {return response.json()});
+  console.log(response._id);
 
-  IsFinish = response.status == 200 ? true : false;
 
-  if(IsFinish == true){
-    console.log("Tarefa Atualizada")
+  if(response._id == undefined){
+    feedback("error", 'Task not updated', 'Your task has not updated');
+
   } else{
-    console.log("Deu ruimm");
+    feedback("check", 'Task Updated', 'Your task has been updated');
+  
   }
 
   SearchTasks();
