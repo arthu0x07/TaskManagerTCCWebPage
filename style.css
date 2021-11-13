@@ -19,6 +19,7 @@ body {
 
 .conteiner-erro-msg{
   width: 30%;
+  min-width: 280px;
   min-height: 50vh;
   background-color: #6c63ff;
   border-radius: 15px;
@@ -30,8 +31,10 @@ body {
   align-items: center;
   flex-direction: column;
 
-  position: absolute;
-  top: 240vh;
+  position: fixed;
+  top: 20vh;
+  z-index: 10;
+
 }
 
 .conteiner-icon{
@@ -60,6 +63,7 @@ body {
   padding: 10px;
   border-radius: 5px;
   border: 0;
+  box-shadow: 2px 0px 20px rgba(0, 0, 0, 0.514);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.5rem;
   font-weight: 600;

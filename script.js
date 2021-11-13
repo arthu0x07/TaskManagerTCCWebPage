@@ -1,6 +1,7 @@
 const AuthKey = '15:15:15:15:15';
 const endpoint = 'http://192.168.1.3:3333/task'
 var MenuIsOpen = false;
+var MsgIsOpen = false;
 
 function feedback(iconname, title, description){
   conteinerMsg = document.querySelector(".conteiner-erro-msg");
@@ -28,8 +29,13 @@ function feedback(iconname, title, description){
     conteinerIcon.append(iconmsgErr);
   }
 
-
+  if(MsgIsOpen == false){
+    AparecerMsg();
+  }
 }
+
+ButtonConfirmMsg = document.querySelector(".confirm-mensage");
+ButtonConfirmMsg.addEventListener('click', FecharMsg);
 
 // Sempre que uma tarefa for cadastrada, atualizada ou deletada chamar a função de limpar as tarefas do container e chamar novamente o searchTasks.
 // Será utilizada junto com a função vista para atualizar as tasks
@@ -442,6 +448,16 @@ function CloseMenu(){
 
 function OpenMenu(){
   ContainerMenu.style.animationName = "AbrirMenu";
+}
+
+function AparecerMsg(){
+  conteinerMsg.style.animationName = "AparecerMsgErro"
+  MsgIsOpen = true;
+}
+
+function FecharMsg(){
+  conteinerMsg.style.animationName = "SumirMsgErro"
+  MsgIsOpen = false;
 }
 
 SearchTasks()

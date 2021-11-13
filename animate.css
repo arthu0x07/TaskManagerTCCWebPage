@@ -22,6 +22,17 @@
   animation-timing-function: ease-in-out;
 }
 
+.conteiner-erro-msg{
+  transform: translateY(-100vh);
+
+  animation-name: x;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
 @keyframes FecharMenu {
   from {
     transform: translateX(0px);
@@ -44,10 +55,32 @@
 
 @keyframes TransitionColor{
   to{
+    box-shadow: 2px 0px 20px rgba(15, 15, 15, 0.514);
     color: rgb(77, 77, 77);
   }
 
   from{
+    box-shadow: 2px 2px 20px rgba(85, 85, 85, 0.514);
     color: rgb(0, 99, 228);
+  }
+}
+
+@keyframes AparecerMsgErro{
+  from{
+    transform: translateY(-100vh);
+  }
+
+  to{
+    transform: translateY(0vh);
+  }
+}
+
+@keyframes SumirMsgErro{
+  from{
+    transform: translateY(0vh);
+  }
+
+  to{
+    transform: translateY(-100vh);
   }
 }
