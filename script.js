@@ -80,7 +80,7 @@ async function DeleteTasks(id){
 
   console.log(id);
 
-  if(id == undefined){
+  if(id == undefined ^ id == null){
     feedback('error', "No Task", "you are trying to delete without selecting a task");
 
     return undefined;
