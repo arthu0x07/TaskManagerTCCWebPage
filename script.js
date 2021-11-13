@@ -23,7 +23,7 @@ async function UpdateTasks(IdTask, NewValueTitle, NewValueDescription, NewValueD
     console.log("Deu ruimm");
   }
 
-  console.log(response);
+  SearchTasks();
 }
 
 // Deleta uma task pelo id, já está vinculada ao evento e está funcionando!
@@ -95,6 +95,7 @@ async function SearchTasks(){
       CreateCard(item._id, item.title, item.description, TaskFormatDateForCard(item.when), 'month')
     })
 
+  CleanFormEditmode();
 }
 
 // Função que cria os cards na tela, chamada após ter sido enviada para o servidor.
@@ -225,6 +226,23 @@ let BotaoCardExpandSairEditMode = document.querySelector("#button-SairModoEdit")
 BotaoCardExpandSalvar.addEventListener("click", SaveTask);
 BotaoCardExpandSairEditMode.addEventListener("click", SairEditMode);
 
+// Limpa os forms do Edimode após salvar uma tarefa ou sair do modo de visualização...
+function CleanFormEditmode(){
+  InputEditTitle = document.querySelector("#InputTitleEdit");
+  InputEditDate = document.querySelector("#InputDateEdit");
+  InputEditDescription = document.querySelector(".descricao-tarefa-expandida");
+
+  InputEditDate.value = '';
+  InputEditTitle.value = '';
+  InputEditDescription.value = '';
+
+  ConteinerDataSet = document.querySelector(".conteiner-card-expandido");
+  ConteinerDataSet.removeAttribute("data-idexpand");
+  ConteinerDataSet.removeAttribute("data-title");
+  ConteinerDataSet.removeAttribute("data-description");
+  ConteinerDataSet.removeAttribute("data-datetask");
+}
+
 function SaveTask(e){
   let IdTask = document.querySelector(".conteiner-card-expandido").dataset.idexpand
   let NewValueTitle = document.querySelector("#InputTitleEdit").value
@@ -246,6 +264,8 @@ function EntrarEditMode(){
 }
 
 function SairEditMode(){
+  CleanFormEditmode();
+
   let headerCard = document.querySelector(".header-card-expandido");
   let headerCardEditMode = document.querySelector(".header-card-expandido-editmode");
   let textArea = document.querySelector(".descricao-tarefa-expandida");

@@ -213,7 +213,7 @@ body {
 .conteiner-main-img {
   width: 50%;
   min-width: 280px;
-  align-self: flex-end;
+  align-self: center;
 }
 
 #main-img {
@@ -221,7 +221,7 @@ body {
 }
 
 .conteiner-main-welcomemsg {
-  width: 50%;
+  width: 47%;
   align-self: flex-start;
   transform: rotate(-5deg);
   display: flex;
@@ -318,17 +318,24 @@ body {
 .TitleEditMode {
   width: 70%;
   box-sizing: border-box;
-  background-color: rgb(43, 2, 53);
+  
+  background-color: rgba(43, 2, 53, 0.178);
   color: #fffffe;
   border: 0;
-  font-weight: 900;
+
   padding: 10px;
+
+  font-weight: 900;
   font-size: 2rem;
   font-family: 'Roboto';
+
   height: 40px;
   font-size: 2rem;
-  margin-right: 1rem;
   border-radius: 4px;
+
+  margin-bottom: 10px;
+
+  width: 100%;
 }
 
 .TitleEditMode::placeholder {
@@ -344,12 +351,13 @@ body {
   display: flex;
   box-sizing: border-box;
   height: 40px;
-  background-color: rgb(43, 2, 53);
+  background-color: rgba(43, 2, 53, 0.178);
   border: 0;
   color: whitesmoke;
   font-size: 2rem;
   border-radius: 4px;
   padding: 20px;
+  width: 100%;
 }
 
 .DateEditMode::placeholder {
@@ -462,6 +470,10 @@ body {
 }
 
 .div-botoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .div-botoes button {
