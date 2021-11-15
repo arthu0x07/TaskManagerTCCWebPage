@@ -12,6 +12,7 @@
   <body>
     <section class="menu-create">
       <h2>create your tasks</h2>
+      <i class="fas fa-times-circle" id="button-close-menucreate"></i>
 
       <form action="#" class="conteiner-forms">
         <label for="title" class="labels-input">title</label>
@@ -19,14 +20,14 @@
           type="text"
           name="title"
           id="title"
-          placeholder="como identificar sem um titulo?"
+          placeholder="..."
         />
 
         <label for="textarea-create" class="labels-input">description</label>
         <textarea
           name="desc"
           id="textarea-create"
-          placeholder="não da para lembrar o que fazer sem anotar né"
+          placeholder="..."
         ></textarea>
 
         <label for="date" class="labels-input">date</label>
@@ -92,7 +93,7 @@
             type="text"
             id="InputTitleEdit"
             class="TitleEditMode"
-            placeholder="Digite seu novo titulo"
+            placeholder="..."
           />
           <input
             type="date"
@@ -118,7 +119,7 @@
       <div class="section3-main-card">
         <textarea
           class="descricao-tarefa-expandida"
-          placeholder="descrição"
+          placeholder="..."
           disabled
         ></textarea>
       </div>
@@ -169,6 +170,23 @@
       <p class="description-mensage">your task has been successfully registered</p>
       <button class="confirm-mensage">Continue</button>
     </section>
+
+    <section class="conteiner-apresentation">
+
+      <div class="conteiner-title-apresentation">
+        <p class="title-apresentation">Don't think about what you've done, think about what's still missing.</p>
+      </div>
+
+      <div class="conteiner-img-apresentation">
+        <img src="assets/img/secondimage.png" alt="moça olhando as tarefas" class="img-apresentation">
+      </div>
+    </section>
+
+    <div class="conteiner-apresentation-two">
+      <p class="conteiner-titletwo-apresentation">
+        If you've finished a task, just delete it, it will make you more focused on what you haven't done yet.
+      </p>
+    </div>
 
     <script src="script.js"></script>
     <script

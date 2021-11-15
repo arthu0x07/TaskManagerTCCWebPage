@@ -86,15 +86,15 @@ body {
   padding: 10px;
   z-index: 8;
   transform: translateX(0px);
-
-  position: absolute;
-  top: 215vh;
+  position: fixed;
+  top: 0vh;
   left: 0px;
+
   /* vão receber display none, vão ser dois menus de cada lado da tela, uma para setar os botões de listagem e outro pra criar */
 }
 
 .menu-create h2 {
-  width: 100%;
+  max-width: 80%;
   text-align: center;
   font-size: 3rem;
   font-family: 'Roboto';
@@ -102,6 +102,17 @@ body {
   color: #f2f2f2c2;
   padding: 10px;
   border-radius: 10px;
+  margin-right: 5px;
+}
+
+.menu-create i{
+  max-width: 10%;
+  font-size: 4.5rem;
+  align-self: flex-end;
+  margin: 10px;
+  position: relative;
+  top: 20px;
+  color: #353535;
 }
 
 .conteiner-forms {
@@ -119,8 +130,8 @@ body {
   color: #fffffe;
   font-family: 'Roboto';
   background-color: #6c63ff;
-  padding: 5px 30px 5px 5px;
-  border-radius: 10px;
+  padding: 5px 30% 5px 5px;
+  border-radius: 5px;
 }
 
 .conteiner-forms input {
@@ -454,9 +465,11 @@ body {
 /* /////-------- Cards ------------  */
 
 .container-cards-general {
-  margin-top: 8vh;
+  margin-top: 10vh;
+  padding: 0 0 5vh 0;
   width: 100%;
   min-height: 40vh;
+  box-shadow: 0px 10px 20px rgb(145, 145, 145);
 }
 
 .conteiners-cards-mark {
@@ -566,6 +579,66 @@ body {
   overflow: hidden;
 }
 
+.conteiner-apresentation{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  min-height: 70vh;
+  width: 100%;
+  margin-top: 20vh;
+}
+
+.conteiner-title-apresentation{
+  align-self: flex-start;
+  text-align: center;
+  min-width: 280px;
+  max-width: 320px;
+  min-height: 24vh;
+  border-radius: 22px;
+  background-color: #6c63ff;
+  padding: 30px 10px;
+  color: #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  box-shadow: 12px 18px 3px rgba(73, 73, 73, 0.438);
+  transform: rotate(-6deg);
+}
+
+.conteiner-img-apresentation{
+  width: 50%;
+  min-width: 280px;
+  align-self: center;
+  padding: 10px;
+}
+
+.img-apresentation{
+  width: 100%;
+
+}
+
+.conteiner-apresentation-two{
+  padding: 5vh;
+}
+
+.conteiner-titletwo-apresentation{
+  width: 100%;
+  background-color: #6c63ff;
+  font-size: 3rem;
+  margin-top: 5vh;
+  padding: 50px 10px;
+  color: #f2f2f2;
+  box-shadow: 0px 10px 3px rgba(73, 73, 73, 0.438);
+  border-radius: 22px;
+  margin-bottom: 5vh;
+  text-align: center;
+  font-weight: 900;
+}
+
 @media (max-width: 700px) {
   html {
     font-size: 50%;
@@ -612,4 +685,38 @@ body {
   .conteiner-card-expandido {
     width: 98%;
   }
+
+  .conteiner-apresentation{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-height: 70vh;
+    width: 100%;
+  } 
+
+  .conteiner-title-apresentation{
+    min-width: 260px;
+    max-width: 320px;
+    margin: 10px;
+    min-height: 24vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(0deg);
+    width: 100%;
+  }
+
+  .conteiner-apresentation-two{
+    width: 100%;
+  }
+  
+  .conteiner-titletwo-apresentation{
+    width: 100%;
+  }
+
 }
+
+/*

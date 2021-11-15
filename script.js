@@ -80,7 +80,7 @@ async function DeleteTasks(id){
 
   console.log(id);
 
-  if(id == undefined ^ id == null){
+  if(id == undefined || id == null){
     feedback('error', "No Task", "you are trying to delete without selecting a task");
 
     return undefined;
@@ -427,6 +427,9 @@ function CleanFormValues(e){
 ContainerMenu = document.querySelector(".menu-create");
 ButtonMenu = document.querySelector("#header-menu-button");
 ButtonMenu.addEventListener('click', StartMenu)
+
+ButtonCloseMenuCreate = document.querySelector("#button-close-menucreate");
+ButtonCloseMenuCreate.addEventListener('click', StartMenu);
 
 function StartMenu(){
   console.log("click")
