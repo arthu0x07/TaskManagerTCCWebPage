@@ -13,7 +13,7 @@
   animation-timing-function: ease;
 }
 
-.confirm-mensage{
+.confirm-mensage {
   animation-name: TransitionColor;
   animation-duration: 1s;
   animation-fill-mode: none;
@@ -22,7 +22,7 @@
   animation-timing-function: ease-in-out;
 }
 
-.conteiner-erro-msg{
+.conteiner-erro-msg {
   transform: translateY(-100vh);
 
   animation-name: x;
@@ -53,34 +53,34 @@
   }
 }
 
-@keyframes TransitionColor{
-  to{
+@keyframes TransitionColor {
+  to {
     box-shadow: 2px 0px 20px rgba(15, 15, 15, 0.514);
     color: rgb(77, 77, 77);
   }
 
-  from{
+  from {
     box-shadow: 2px 2px 20px rgba(85, 85, 85, 0.514);
     color: rgb(0, 99, 228);
   }
 }
 
-@keyframes AparecerMsgErro{
-  from{
+@keyframes AparecerMsgErro {
+  from {
     transform: translateY(-100vh);
   }
 
-  to{
+  to {
     transform: translateY(0vh);
   }
 }
 
-@keyframes SumirMsgErro{
-  from{
+@keyframes SumirMsgErro {
+  from {
     transform: translateY(0vh);
   }
 
-  to{
+  to {
     transform: translateY(-100vh);
   }
 }
